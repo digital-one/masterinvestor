@@ -1,0 +1,92 @@
+nav#nav{
+	background-color: $blue;
+	@include inline-menu;
+	ul{
+		margin:0;
+	}
+	li{
+		margin-right: 40px;
+		padding: 10px 0;
+		a{
+			@include font-size(16px);
+			color: white;
+			@include font-body;
+			text-transform: uppercase;
+			height:30px;
+			line-height: 30px;
+			padding: 0 0 0 40px;
+			position: relative;
+			&:before{
+				content:"";
+				width:30px;
+				height:30px;
+				display: block;
+				@include abs-pos(0,auto,auto,0);
+				background-image:url('../images/icon-book.png');
+				.svg &{
+					background-image:url('../images/icon-book.svg');
+				}
+				background-position:center center;
+				background-repeat:no-repeat;
+				background-size: 24px auto;
+			}
+		}
+		&.equities{
+			a:before{
+				background-image:url('../images/icon-equities.png');
+					.svg &{
+						background-image:url('../images/icon-equities.svg');
+				}
+			}
+		}
+		&.evil-diaries{
+			a:before{
+				background-image:url('../images/icon-evil-diaries.png');
+					.svg &{
+						background-image:url('../images/icon-evil-diaries.svg');
+				}
+			}
+		}
+		&.currencies{
+			a:before{
+				background-image:url('../images/icon-currencies.png');
+					.svg &{
+						background-image:url('../images/icon-currencies.svg');
+				}
+			}
+		}
+		&.economics{
+			a:before{
+				background-image:url('../images/icon-economics.png');
+					.svg &{
+						background-image:url('../images/icon-economics.svg');
+				}
+			}
+		}
+		&.other{
+			a:before{
+				background-image:url('../images/icon-other.png');
+				background-size: 30px auto;
+					.svg &{
+						background-image:url('../images/icon-other.svg');
+				}
+			}
+		}
+		&.about{
+			a:before{
+				background-image:url('../images/icon-about.png');
+					.svg &{
+						background-image:url('../images/icon-about.svg');
+				}
+			}
+		}
+		&.contact{
+			a:before{
+				background-image:url('../images/icon-contact.png');
+					.svg &{
+						background-image:url('../images/icon-contact.svg');
+				}
+			}
+		}
+	}
+}

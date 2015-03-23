@@ -1,0 +1,9 @@
+html{
+	//font-size: 62.5%;
+}
+body{
+	@include font-body;
+	color: $grey;
+	-webkit-font-smoothing: antialiased;
+	background: white;
+}

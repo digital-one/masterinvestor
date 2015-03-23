@@ -1,0 +1,279 @@
+#slider{
+	width:100%;
+	height:100%;
+	padding:98px 14px 14px;
+	position:fixed;
+	left:0;
+	top:0;
+	@include opacity(0);
+	display: block;
+	background-color:white;
+	@media only screen  and (max-width : $break-medium) and (orientation : portrait) {
+		height:60%;
+	}
+	@media only screen  and (max-width : $break-small) and (orientation : portrait) {
+		height:50%;
+		padding:94px 10px 50px;
+	}
+	@media only screen  and (max-width : $break-xsmall) and (orientation : portrait) {
+		height:55%;
+	}
+}
+
+.slick-slider{
+	width:100%;
+	height:100%;
+	display:block;
+	position:relative;
+	.slick-list,.slick-track{
+		width:100%;
+		height:100%;
+		display: block;
+	}
+	.slick-list{
+		position: relative;
+  		overflow: hidden;
+  		display: block;
+  		padding: 0;
+		.slick-track{
+			position: relative;
+  			left: 0;
+  			top: 0;
+  			display: block;
+  			width:100%;
+			.slick-slide{
+				width:100%;
+				/*
+				@include opacity(0);
+				@include transition(opacity 0.5s ease);
+				.loaded &{
+					@include opacity(1);
+				}
+				*/
+				max-width:1800px;
+				float:left;
+				height:100%;
+				position:relative;
+				display: block;
+				@include bg-cover;
+				background-position:center top;
+				.inner{
+					display: block;
+					width:100%;
+					height:100%;
+					&:before{
+						content:"";
+						height:100%;
+						display: inline-block;
+						vertical-align: middle;
+					}
+				}
+				.vcenter{
+					display: inline-block;
+					width:99%;
+					vertical-align: middle;
+					z-index: 999;
+					margin:0 auto;
+					text-align: center;
+					background-color: transparent;
+					position: relative;
+				}
+				.caption{
+					//@include transition(margin 0.8s ease-in, opacity 0.8s ease-in);
+					margin:100px auto 0;
+					width:40%;
+					display: inline-block;
+					background-color: rgba(255,255,255,.7);
+					padding:30px;
+					@media only screen  and (max-width : $break-medium){
+						width: 50%;
+					}
+					@media only screen  and (max-width : $break-small){
+						margin:0 auto 0;
+						width:94%;
+						height:100%;
+						padding:15px;
+					}
+					.csstransitions &{
+						@include opacity(0);
+						@include transition(margin 0.3s ease, opacity 0.3s ease-in);
+					}
+					.button{
+						height:40px;
+						line-height: 38px;
+						padding:0 15px;
+						@include font-size(13);
+						@media only screen  and (max-width : $break-large){
+							height:30px;
+							line-height: 28px;
+							@include font-size(12);
+						}
+						@media only screen  and (max-width : $break-small){
+							display: none;
+						}
+					}
+					&.move{
+						margin:80px auto 0;
+						@include opacity(1);
+						@media only screen  and (max-width : $break-small){
+							margin: 0 auto;
+						}
+					}
+					h3{
+						position: relative;
+						padding-bottom:20px;
+						margin-bottom: 20px;
+						line-height: 130%;
+						@media only screen  and (max-width : $break-small){
+							padding-bottom:10px;
+						margin-bottom: 10px;
+						}
+						&:after{
+							content:"";
+							@include abs-pos(auto,auto,0,50%);
+							width:60px;
+							height:1px;
+							background-color: $dark-grey;
+							margin-left: -30px;
+						}
+					}
+					h4{
+						font-family: $freight-book;
+						text-transform: none;
+						@include font-size(22);
+						letter-spacing: 2px;
+						@media only screen  and (max-width : $break-medium){
+							@include font-size(18);
+						}
+						@media only screen  and (max-width : $break-small){
+							margin-bottom:0px;
+						}
+					}
+					.logo{
+						width:60%;
+						height:auto;
+						display: inline-block;
+						margin:0 auto 25px;
+						@media only screen  and (max-width : $break-medium){
+							width: 70%;
+						}
+						@media only screen  and (max-width : $break-small){
+							width: 50%;
+							margin-bottom: 15px;	
+						}
+						&.portrait{
+							height:160px;
+							@media only screen  and (max-width : $break-small){
+								height:60px;
+							}
+							img{
+								height:100%;
+								width:auto;
+							}
+						}
+						img{
+							width:100%;
+							height:auto;
+						}
+					}
+				}
+			}
+		}
+	}
+	&#carousel{
+		padding:0 40px;
+		.slick-list{
+			
+		}
+		.slick-prev,.slick-next{
+			width:14px;
+			height:24px;
+			display: block;
+			background-image:url('../images/carousel-prev.svg');
+			background-position: center center;
+			background-repeat:no-repeat;
+			background-size:100% auto;
+			@include abs-pos(50%,auto,auto,15px);
+			margin-top:-12px;
+			z-index: 9999;
+		}
+		.slick-next{
+			@include abs-pos(50%,15px,auto,auto);
+			background-image: url('../images/carousel-next.svg');
+		}
+	}
+	.slick-prev,.slick-next{
+		background-color: transparent;
+		border:none;
+		@extend %ir;
+	}
+	.slick-dots-wrap{
+		width:auto;
+		background-color:transparent;
+		position:relative;
+		z-index: 9999;
+		@include abs-pos(0,-2px,0,auto);
+		display: inline-block;
+		height:100%;
+		@media only screen  and (max-width : $break-small) and (orientation : portrait) {
+			@include abs-pos(auto,auto,-30px,auto);
+			height:auto;
+			width:100%;
+		}
+		.inner{
+			height:100%;
+			position:relative;
+			@media only screen  and (max-width : $break-small) and (orientation : portrait) {
+				width:100%;
+				height:auto;
+			}
+			&:before{
+				content: "";
+            	display: inline-block;
+            	height: 100%;
+            	vertical-align: middle;
+			}
+			div{
+				vertical-align: middle;
+				display: inline-block;
+				color: white;
+				@media only screen  and (max-width : $break-small) and (orientation : portrait) {
+					width:100%;
+					@include centered-menu;
+				}
+			}
+		}
+	}
+	ul.slick-dots{
+		background-color:white;
+		position: relative;
+		background-color:white;
+		vertical-align: middle;
+		padding:15px 0;
+		@media only screen  and (max-width : $break-small) and (orientation : portrait) {
+			background-color: transparent;
+			padding:0;
+		}
+		li{
+			padding: 10px 15px;
+			display: block;
+			@media only screen  and (max-width : $break-small) and (orientation : portrait) {
+				padding:0 5px;
+			}
+			button{
+				display:block;
+				border:none;
+				width:10px;
+				height:10px;
+				padding:0;
+				@include border-radius(50%);
+				@extend %ir;
+			}
+			&.slick-active{
+				button{
+					background-color:black;
+				}
+			}
+		}
+	}
+}

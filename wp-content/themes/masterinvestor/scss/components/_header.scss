@@ -1,0 +1,16 @@
+header#header{
+	#home-link{
+		width: 458px;
+		height: 94px;
+		display: block;
+		background-image: url('../images/master-investor.png');
+		background-repeat: no-repeat;
+		background-position: left top;
+		background-size: 100% auto;
+		@extend %ir;
+		.svg &{
+			background-image: url('../images/master-investor.svg');
+		}
+	}
+}
+

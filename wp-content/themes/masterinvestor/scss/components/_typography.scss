@@ -1,0 +1,94 @@
+h1,h2,h3,h4,h5{
+	font-family: $brandongrotesque-bold;
+	@include font-size(20);
+	color: $dark-grey;
+	font-weight:normal;
+	line-height:100%;
+	letter-spacing:4px;
+	text-transform:uppercase;
+	margin: 0 0 30px;
+	@media screen and (max-width: $break-xlarge){
+		@include font-size(18);
+	}
+	@media screen and (max-width: $break-small){
+		@include font-size(16);
+		line-height: 130%;
+		//margin-bottom: 7px;
+	}
+}
+a{
+	@include transition(all 0.4s ease);
+	&:link,&:visited{
+		text-decoration: none;
+		color: $dark-grey;
+	}
+	&:focus{
+		outline:none !important;
+	}
+}
+p{
+	font-family: $freight-book;
+	letter-spacing:0.7px;
+	word-spacing: 1px;
+	@include font-size(22);
+	line-height: 140%;
+	margin-bottom: 40px;
+	&.intro{
+		@include font-size(25);
+		display: block;
+		@media screen and (max-width: $break-small){
+			@include font-size(22);
+		}
+	}
+	i{
+		font-family: $freight-book-italic;
+		font-style: normal;
+	}
+	a{
+		&:link,&:visited{
+			border-bottom: 1px dotted $grey;
+		}
+		&:hover,&:active{
+			border-bottom: 1px solid $grey;
+		}
+	}
+	&.vcard{
+		font-family: $brandongrotesque-regular;
+		@include font-size(16);
+		text-transform: uppercase;
+		line-height: 150%;
+		letter-spacing: 1px;
+		margin-bottom: 55px;
+		@media screen and (max-width: $break-small){
+			@include font-size(14);
+		}
+		span{
+			display: block;
+			margin-bottom: 10px;
+			&:last-child{
+				margin:0;
+			}
+		}
+		a{
+			text-transform: none;
+		}
+	}
+	@media screen and (max-width: $break-xlarge){
+		@include font-size(20);
+	}
+	@media screen and (max-width: $break-small){
+		@include font-size(18);
+	}
+}
+address{
+	font-style: normal;
+}
+small{
+	@include font-size(10);
+	font-family: $brandongrotesque-regular;
+	display: block;
+	line-height: 140%;
+	word-spacing:normal;
+	letter-spacing:0.5px;
+}
+

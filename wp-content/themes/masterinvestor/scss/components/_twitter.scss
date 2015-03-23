@@ -1,0 +1,93 @@
+.twitter-feed{
+	text-align:center;
+	width:90%;
+	height:auto;
+	display: inline-block;
+	vertical-align:middle;
+	padding: 0;
+	margin-top:-40px;	
+	@media screen and (max-width: $break-xlarge){
+		padding: 0;
+	}
+	@media screen and (max-width:$break-medium){
+		padding:70px 0 90px;
+	}
+	@media screen and (max-width: $break-small){
+		margin:-40px 0 0;
+	}
+	a{
+		display: inline-block !important;
+	}
+	.user{
+		width:38px;
+		height:31px;
+		display: block;
+		background:url('../images/twitter-feed.svg') left top no-repeat;
+		background-size:100% auto;
+		margin:0 auto 20px;
+		img,span{
+			display: none;
+		}
+		.ie8 &{
+			background:url('../images/twitter-feed.png') left top no-repeat;
+		}
+		@media screen and (max-width: $break-xlarge){
+			width:28px;
+			height: 23px;
+			margin-bottom: 15px;
+		}
+	}
+	.tweet{
+		@include font-size(18);
+		line-height:140%;
+		font-family: $brandongrotesque-regular;
+		letter-spacing: 0;
+		margin-bottom: 10px;
+		a{
+			&:link,&:visited{
+				font-family: $brandongrotesque-bold;
+			}
+		}
+		@media screen and (min-width:$break-medium) and (max-width:900px){
+			@include font-size(14);
+		}
+		@media screen and (max-width: $break-medium -1){
+			@include font-size(16);
+		}
+		@media screen and (max-width: $break-small){
+			@include font-size(14);
+		}
+	}
+	.timePosted{
+		@include font-size(12);
+		display: block;
+		text-align: center;
+		font-family: $brandongrotesque-regular;
+		margin:0;
+		@media screen and (min-width:$break-medium) and (max-width: $break-xlarge){
+			display:none;
+		}
+	}
+	.interact{
+		display: none;
+	}
+	footer{
+		@include abs-pos(auto,0,0,0);
+		padding:0 0 20px;
+		.button{
+			height:40px;
+			line-height: 38px;
+			@include font-size(14);
+			letter-spacing: 2px;
+			padding: 0 15px;
+			display: inline-block;
+		}
+		@media screen and (max-width: $break-medium - 1){
+			#signposts &{
+				position: relative;
+				padding:0 0 20px;
+			}
+			
+		}
+	}
+}
