@@ -1,0 +1,28 @@
+.category{
+	article{
+		h2{
+			@include font-size(22px);
+			margin-bottom: 10px;
+		}
+		figure{
+			margin:0;
+		}
+	}
+}
+.archive-menu{
+	@extend %clearfix;
+	h4{
+		background-color: $blue;
+		color: white;
+		margin-bottom: 15px;
+		@include font-size(16px);
+		text-transform: uppercase;
+		padding: 8px 10px;
+	}
+	h5{
+		margin-bottom: 10px;
+	}
+	p{
+		@include font-size(12px);
+	}
+}

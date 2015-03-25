@@ -1,97 +1,43 @@
-header#header{
-	padding:25px 0 45px;
-	background-color: white;
-	.columns{
-		height:94px;
-		&:last-child{
-			float:left;
-		}
-		.inner{
-			height:100%;
-			width:auto;
-			display: inline-block;
-			&:before{
-				content:"";
-				height:100%;
-				display: inline-block;
-				vertical-align: bottom;
-			}
-			div{
-				display: inline-block;
-				vertical-align: bottom;
-			}
-			&.full-width{
-				width:100%;
-				div{
-					width: 98%;
-				}
-			}
-		}
-	}
-	#home-link{
-		width: 458px;
-		height: 94px;
-		display: block;
-		background-image: url('../images/master-investor.png');
-		background-repeat: no-repeat;
-		background-position: left top;
-		background-size: 100% auto;
-		display: inline-block;
-		margin:0;
-		@extend %ir;
-		.svg &{
-			background-image: url('../images/master-investor.svg');
-		}
-	}
-	.subscribe-link{
-		display: inline-block;
-		padding: 0 100px 0 0;
-		@include font-size(30px);
-		color: $dark-grey;
-		height: 100%;
-		line-height: 100%; 
-		font-family: $bebas;
-		position: relative;
-		span{
-			color: $blue;
-		}
-		&:after{
-			content:"";
-			width:88px;
-			height:94px;
-			display: block;
-			@include abs-pos(0,0,auto,auto);
-			background-image:url('../images/devices.png');
-			background-position: left top;
-			background-repeat: no-repeat;
-			background-size: 100% auto;
-		}
-	}
-	form{
-		width:100%;
-		display: block;
-		position:relative;
-		input{
-			padding-right: 35px;
-			margin-bottom: 0;
-			height:37px;
-		}
-		button{
-			height:35px; 
-			@include abs-pos(1px,1px,auto,auto);
-		}
-	}
-}
 nav.social{
 	@include inline-menu;
+	aside &{
+		background-color:$light-grey;
+		padding:15px 0;
+		text-align: center;
+		height:67px;
+		@extend %clearfix;
+		div{
+			display: inline-block;
+			margin:0 auto;
+			height:37px;
+			overflow:hidden;
+		}
+		span{
+			display: inline-block;
+			height:37px;
+			line-height: 37px;
+			float:left;
+			@include font-size(16px);
+			font-family: $merriweather;
+			padding-right:20px;
+		}
+		ul{
+			float: left;
+		}
+	}
 	ul{
 		margin:0;
 		li{
 			margin-right: 10px;
+			display: block;
+			&:last-child{
+				margin-right:0;
+			}
 			a{
 				display: block;
 				width:37px;
 				height:37px;
+				line-height: 100%;
 				@include border-radius(50%);
 				&:link,&:visited{
 					background-color: $grey;

@@ -1,26 +1,171 @@
-.underline{
-	text-align:center;
-	width:100%;
-	height:auto;
-	display:block;
+.sub-head{
+	@include font-size(37px);
+	line-height:100%;
+	margin-bottom:0;
+	color: $blue;
+	text-align:left;
+	font-family:$bebas;
 	position:relative;
-	margin:0 0 45px;
-	span{
-		display: block;
-		margin:0 auto;
-		width:150px;
-		height:100%;
-		height:1px;
-		background-color: $dark-grey;
-		line-height: 100%;
+	&.invert{
+		background-color: $blue;
+		color: white;
+		padding:10px 20px 10px 60px;
+		display: inline-block;
+		&:before{
+			content:"";
+			width:32px;
+			height:34px;
+			@include abs-pos(50%,auto,auto,15px);
+			display: block;
+			@include bg-image('../images/icon-book');
+			margin-top:-17px;
+			.evil-diaries &{
+				@include bg-image('../images/icon-evil-diaries');
+			}
+			.economics &{
+				@include bg-image('../images/icon-economics');
+			}
+			.equities &{
+				@include bg-image('../images/icon-equities');
+			}
+			.currencies &{
+				@include bg-image('../images/icon-currencies');	
+			}
+			.others &{
+				@include bg-image('../images/icon-other');
+				width:36px;
+				margin-top: -14px;
+			}
+		}
 	}
 }
-.gutter{
-	padding: 0 22%;
-	@media screen and (max-width: $break-large){
-		padding:0 10%;
+.division{
+	display: block;
+	height:$half-spacing * 2;
+	width: 100%;
+	position: relative;
+	@extend %clearfix;
+	&:after{
+		content:"";
+		display: block;
+		width:100%;
+		height:1px;
+		background-color: lighten($grey,20%);
+		@include abs-pos($half-spacing,0,auto,0);
 	}
-	@media screen and (max-width: $break-small){
-		padding:0 20px;
+}
+.tint{
+	background-color: $light-grey;
+	padding-top:0.9375rem;
+	padding-bottom: 0.9375rem;
+}
+.vertical-center{
+	@include vertical-center;  
+}
+figure{
+	&.ratio-16-9{
+		display:block;
+		width:100%;
+		background-color: $grey;
+		position: relative;
+		&:before{
+			content:"";
+			padding-top:66.66%;
+			display: inline-block;
+		}
+		@include bg-cover;
+	}
+	a{
+		@include abs-pos(0,0,0,0);
+		display: block;
+	}
+}
+.author{
+	font-family: $merriweather;
+	text-transform:uppercase;
+	margin-bottom: 30px;
+}
+article{
+	&.post{
+		figure{
+			margin-bottom: 15px;
+		}
+		header{
+			margin-bottom: 20px;
+			h3{
+				@include font-size(24px);
+				line-height: 120%;
+				margin-bottom: 15px;
+			}
+			p{
+				//margin:0;
+			}
+		}
+		time{
+			font-family: $bebas;
+			line-height: 100%;
+			display: block;
+		}
+		.category{
+			text-transform: uppercase;
+		}
+	}
+}
+header{
+	&.section-header{
+		margin-bottom: $half-spacing;
+	}
+	&.avatar-header{
+		padding: 0 0 0 90px;
+		min-height:76px;
+		&.fixed-height{
+			height:76px;
+		}
+		position: relative;
+		.avatar{
+			width:76px;
+			height:76px;
+			@extend %ir;
+			display: block;
+			@include border-radius(50%);
+			background-color:$grey;
+			@include abs-pos(0,auto,auto,0);
+		}
+	}
+}
+.latest-edition{
+	margin-top:$half-spacing;
+	background-color: $light-grey;
+	border:1px solid $grey;
+	header{
+		background-color: $dark-grey;
+		color: white;
+		padding:10px;
+		h3{
+			font-family: $bebas;
+			color: white;
+			@include font-size(30px);
+			text-align: center;
+			margin:0;
+		}
+	}
+	main{
+		padding:15px;
+		display: block;
+		text-align: right;
+		position: relative;
+		img{
+			width:70%;
+			height: auto;
+		}
+		.flash{
+			width:177px;
+			height:177px;
+			display: inline-block;
+			@include bg-image('../images/device-flash',false);
+			z-index: 999;
+			@include abs-pos(15px,auto,auto,15px);
+			@extend %ir;
+		}
 	}
 }

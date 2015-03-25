@@ -1,63 +1,71 @@
 #footer{
-	z-index:2;
-	background-color: $light-grey;  
-	position: relative;
-	text-align:center;
-	padding: 40px 0 10px;
-	@include font-size(12);
-	@include opacity(0);
-	text-transform: uppercase;
-	/*
-	
-	@include transition(opacity 1s ease);
-	.loaded &{
-		@include opacity(1);
+	padding: $spacing 0 $spacing;
+	color: white;
+	@include font-size(14px);
+	font-family: $merriweather;
+	text-transform:uppercase;
+	.row{
+		position:relative;
 	}
-	*/
-	h3{
-		display:block;
-		width:200px;
-		height:18px;
-		margin:0 auto 40px;
-		background-image:url('../images/giselle.svg');
-		background-position: left top;
-		background-repeat: no-repeat;
-		background-size:100% auto;
-		@extend %ir;
-		.ie8 &{
-			background-image:url('../images/giselle.png');
-		}
+	h4{
+		font-family: $bebas;
+		color: white;
+		@include font-size(30px);
+		padding-bottom:8px;
+		border-bottom: 1px solid $blue;
+		margin-bottom: 30px;
+	}
+	h5{
+		color: white;
+		line-height: 140%;
+		text-transform: none;
 	}
 	p{
-		margin-bottom: 20px;
-		&.vcard{
-			margin-bottom: 50px;
-			@include font-size(14);
+		@include font-size(14px);
+	}
+	li{
+		display: block;
+		line-height:100%;
+		margin-bottom: 6px;
+	}
+	a{
+		&:link,&:visited{
+			color: white;
 		}
 	}
-}
-nav.social{
-	@include centered-menu;
-	margin-bottom: 55px;
-	li{
-		margin: 0 5px;
-		a{
-			display: block;
-			width:32px;
-			height:32px;
-			@extend %ir;
-			background-image:url('../images/twitter.svg');
-			background-position: left top;
-			background-repeat: no-repeat;
-			background-size: 100% auto;
-			@include opacity(.4);
-			@include transition(opacity .5s ease);
-			&.facebook{
-				background-image:url('../images/facebook.svg');
-			}
-			&:hover,&:active{
-				@include opacity(.8);
-			}
+	.column-inner{
+		padding-right:30px;
+	}
+	figure{
+		margin-bottom: 10px;
+	}
+	section{
+		margin-bottom: 40px;
+		@extend %clearfix;
+		&:last-child{
+			margin-bottom: 0;
 		}
+	}
+	a.anchor-up{
+		display: block;
+		width:65px;
+		height:65px;
+		
+		@extend %ir;
+		background-image:url('../images/page-up-arrow.png');
+		.svg &{
+			background-image:url('../images/page-up-arrow.svg');
+		}
+		background-position: center center;
+		background-repeat:no-repeat;
+		background-size:25px auto;
+		@include abs-pos(auto,0,0,auto);
+		&:link,&:visited{
+			background-color: $grey;
+		}
+		&:hover,&:active{
+			background-color: white;
+		}
+
 	}
 }

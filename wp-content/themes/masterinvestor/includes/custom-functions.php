@@ -21,8 +21,8 @@ function scripts_and_styles() {
 		
 		
 		//register styles for our theme
-		wp_register_style( 'respgrid', get_template_directory_uri() . '/css/foundation-grid.css', array(), 'all' );
-		wp_enqueue_style( 'respgrid' );
+		//wp_register_style( 'respgrid', get_template_directory_uri() . '/css/foundation-grid.css', array(), 'all' );
+		//wp_enqueue_style( 'respgrid' );
 		
 		//register selectbox
 		//wp_register_script( 'selectbox', get_stylesheet_directory_uri() . '/library/js/libs/jquery.selectBox.js', array(), null, true );

@@ -1,20 +1,22 @@
 nav#nav{
 	background-color: $blue;
-	@include inline-menu;
+	@include centered-menu;
 	ul{
 		margin:0;
 	}
 	li{
-		margin-right: 40px;
-		padding: 10px 0;
+		padding: 0 20px;
 		a{
-			@include font-size(16px);
+			@include font-size(14px);
 			color: white;
 			@include font-body;
+			font-weight: 700;
 			text-transform: uppercase;
 			height:30px;
 			line-height: 30px;
-			padding: 0 0 0 40px;
+			display: block;
+			margin: 10px 0;
+			padding: 0 0 0 35px;
 			position: relative;
 			&:before{
 				content:"";

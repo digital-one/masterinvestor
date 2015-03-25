@@ -1,121 +1,241 @@
 <?php get_header() ?>
-
-<section id="slider" class="slider-outer">
-  <div id="slick" class="slick-slider">
-	<!--<div class="slick-list">
-		<div class="slick-track">-->
-
-  <?php
-if(get_field('slider',$post->ID)):
-while(the_repeater_field('slider')): 
-list($src,$w,$h) = wp_get_attachment_image_src(get_sub_field('slide_image'), 'slide');
-       $link="";
-       $is_brand = false;
-       $is_offer = false;
-       $class="";
-       $sub_head = get_sub_field('slide_sub_heading');
-       $button = get_sub_field('slide_button_label');
-       switch(get_sub_field('slide_type')){
-        case 'brand':
-        $brand = get_sub_field('slide_brand');
-        $is_brand = true;
-       list($svg,$w,$h) = wp_get_attachment_image_src(get_field('brand_logo_svg',$brand->ID), 'full');
-       list($png,$w,$h) = wp_get_attachment_image_src(get_field('brand_logo_png',$brand->ID), 'full');
-       $class=  $h >= $w ? ' portrait' : '';
-       $logo_src = !empty($svg) ? $svg : $png;
-       $link = get_permalink($brand->ID);
-        break;
-        case 'page':
-        $link = get_sub_field('slide_page');
-        break;
-        case 'offer':
-        $is_offer = true; 
-        break;
-       }
-?>    
-<div class="slick-slide slide preload" style="background-image:url('<?php echo $src ?>');">
-  <?php if(!empty($link)):?><a class="inner" href="<?php echo $link ?>"><?php else: ?><div class="inner"><?php endif ?>
-  <?php if(!$is_offer):?>
-  <div class="vcenter"><div class="caption"><?php if($is_brand):?><div class="logo<?php echo $class ?>"><img src="<?php echo $logo_src ?>" /></div><?php endif ?><h3><?php echo get_sub_field('slide_heading')?></h3><?php if(!empty($sub_head)):?><h4><?php echo $sub_head ?></h4><?php endif ?><?php if(!empty($button)):?><span class="button"><?php echo $button ?></span><?php endif?></div></div><?php endif ?>
-  <?php if(!empty($link)):?></a><?php else: ?></div><?php endif ?></div>
-<?php endwhile ?>
-<?php endif ?>
-<?php /*
-<div class="slick-slide slide preload" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/marccain-slide.jpg');"><div class="vcenter"><div class="caption">Caption</div></div></div>
-*/ ?>
-<!--</div>
-</div>-->
-<?php /*
-<div class="slick-dots-wrap">
-	<div class="inner">
-		<div>
-    <ul class="slick-dots"><li class=""><button type="button" data-role="none">1</button></li><li class="slick-active"><button type="button" data-role="none">2</button></li><li class=""><button type="button" data-role="none">3</button></li><li class=""><button type="button" data-role="none">4</button></li><li class=""><button type="button" data-role="none">5</button></li><li class=""><button type="button" data-role="none">6</button></li><li class=""><button type="button" data-role="none">7</button></li></ul>
-    </div>
-</div>
-</div>
-*/ ?>
-<!--</div>
-</div>-->
-</div>
-</section>
 <main id="main">
-<div class="handle"><a>Scroll Down</a></div>
-<section id="signposts">
-<header><h2>SPRING/SUMMER 2015 COLLECTIONS IN STORE NOW</h2></header>
-<div class="posts">
-
-<?php
-if(get_field('signposts',$post->ID)):
-while(the_repeater_field('signposts',$post->ID)): 
-  switch(get_sub_field('signpost_type')){
-    case 'collection':
-    $collection = get_sub_field('signpost_collection');
-      list($src,$w,$h) = wp_get_attachment_image_src(get_post_thumbnail_id($collection->ID), 'signpost');
-      $brand = get_field('collection_brand',$collection->ID);
-      $display_title = get_field('collection_displayed_title',$collection->ID);
-      $title = !empty($display_title) ? $display_title : $collection->post_title;
-      ?>
-      <div class="signpost overlay"><a href="<?php echo get_permalink($collection->ID) ?>" title="<?php echo $collection->post_title ?>" class="content null"><figure><div class="bg" style="background-image:url(<?php echo $src ?>);"></div><figcaption><div><h3><?php echo $brand->post_title ?></h3><h4><?php echo $title ?></h4></div><footer><span class="button">View More</span></footer></figcaption></figure></a></div>
-      <?php
-    break;
-    case 'brand':
-      $brand = get_sub_field('signpost_brand');
-       list($svg,$w,$h) = wp_get_attachment_image_src(get_field('brand_logo_svg',$brand->ID), 'full');
-       list($png,$w,$h) = wp_get_attachment_image_src(get_field('brand_logo_png',$brand->ID), 'full');
-       $class=  $h >= $w ? ' portrait' : '';
-       $src = !empty($svg) ? $svg : $png;
-    ?>
-    <div class="signpost"><?php if(get_field('signpost_link',$brand->ID)==1): ?><a href="<?php echo get_permalink($brand->ID)?>" class="content"><?php else: ?><div class="content"><?php endif ?><div class="logo"><div class="img-wrap<?php echo $class ?>"><img src="<?php echo $src ?>" onerror="this.onerror=null; this.src='<?php echo $png ?>'" /></div></div><?php if(get_field('signpost_link',$brand->ID)==1): ?></a><?php else: ?></div><?php endif ?></div>
-    <?php
-    break;
-    case 'tweet':
-    $feed = get_sub_field('signpost_twitter_feed');
-?>
-<div class="signpost twitter">
-  <div class="content">
-    <div id="<?php echo $feed ?>" class="twitter-feed"></div>
-      <footer><a href="https://twitter.com/giselle_york" target="_blank" class="button">Follow Us</a></footer>
-  </div>
-
+  <!-- feature -->
+<section id="feature">
+<div class="row">
+<div class="large-9 columns">
+  <!--slider-->
+  <div id="slider" class="slick-slider">
+  <!--slide-->
+<div class="slide">
+  <div class="row">
+    <div class="large-4 columns">
+    	<header class="section-header">
+<h2 class="sub-head">Feature</h2>
+</header>
+<h3>North Sea Oil Gold Rush</h3>
+<p class="author">By Jim Mellon</p>
+<p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 </div>
-<?php
-    break;
-  }
-  endwhile;
-  endif;
-
-?>
+<div class="large-8 columns"><figure class="ratio-16-9" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/north-sea.jpg';);">image</figure></div>
 </div>
-
+</div>
+</div>
+<!--/slide-->
+<button class="slick-prev">Previous</button>
+<button class="slick-next">Next</button>
+</div>
+<!--/slider-->
+<aside class="large-3 columns">
+ads
+</aside>
+</div>
 </section>
-<section id="about" class="gutter">
-	<div class="container">
-<?php echo $post->post_content ?>
-<div class="underline"><span></span></div>
-<figure><img src="http://www.giselleladieswear.com/wp-content/uploads/2015/03/shop-front1.jpg" /></figure>
+<!-- /feature -->
+<!-- twitter feed -->
+<section id="twitter-feed">
+<div class="row">
+<div class="large-12 columns">
+	<div class="slider slick-slider twitter-feed">
+		<div class="slide">
+			<div class="vcenter">
+			<div class="user"> <a href="https://twitter.com/giselle_york" aria-label="Giselle Ladieswear (screen name: giselle_york)" data-scribe="element:user_link">
+    <img alt="" src="https://pbs.twimg.com/profile_images/572414297150468096/1suc4p7d_normal.jpeg" data-src-2x="https://pbs.twimg.com/profile_images/572414297150468096/1suc4p7d_bigger.jpeg" data-scribe="element:avatar">
+    <span>
+      <span data-scribe="element:name">Giselle Ladieswear</span>
+    </span>
+    <span data-scribe="element:screen_name">@giselle_york</span>
+  </a>
+</div><p class="tweet">New Year, New you (business that is) http://www.masterinvestormagazine.com/ #debt #recovery</p><p class="timePosted">Posted on 18 Mar</p><p class="interact"><a href="https://twitter.com/intent/tweet?in_reply_to=578198165217783808" class="twitter_reply_icon">Reply</a><a href="https://twitter.com/intent/retweet?tweet_id=578198165217783808" class="twitter_retweet_icon">Retweet</a><a href="https://twitter.com/intent/favorite?tweet_id=578198165217783808" class="twitter_fav_icon">Favorite</a></p>
 </div>
-	</section>
-	<?php get_template_part('newsletter'); ?>
+</div>
+<button class="slick-prev">Prev</button>
+<button class="slick-next">Next</button>
+</div>
 
+</div>
+</div>
+</section>
+<!-- /twitter feed -->
+<!--must reads row-->
+<div class="row">
+<section id="must-reads" class="large-9 columns">
+<header class="section-header"><h2 class="sub-head invert">Must reads</h2></header>
+<div class="row">
+<div class="large-4 columns">
+<article class="post" role="article"><header class="avatar-header"><a href="" class="avatar">Author</a><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><header class="avatar-header"><a href="" class="avatar">Author</a><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><header class="avatar-header"><a href="" class="avatar">Author</a><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+	</div>
+</div>
+</section>
+<aside class="large-3 columns">
+<section class="latest-edition">
+	<a href="">
+<header><h3>View the Latest Edition out now!</h3></header>
+<main><div class="flash">Available to view on all mobile devices</div><img src="<?php echo get_template_directory_uri(); ?>/images/devices.png" /></main>
+</a>
+</section>
+</aside>
+
+</div>
+<!--/must reads row-->
+<div class="row">
+	<div class="large-12 columns">
+<div class="division"></div>
+</div>
+</div>
+<!--row-->
+<div class="row section-wrap">
+<div class="large-9 columns">
+	<!--evil diaries-->
+
+<section id="evil-diaries" class="evil-diaries large-12 columns tint">
+
+<header class="section-header avatar-header fixed-height"><a href="" class="avatar">Author</a><div class="vertical-center"><div class="vcenter"><h2 class="sub-head invert">Evil Diaries</h2></div></div></header>
+<div class="row">
+<div class="large-4 columns">
+<article class="post" role="article"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+	</div>
+</div>
+</section>
+
+	<!--evil diaries-->
+	<div class="division"></div>
+<!-- equities -->
+<div class="row">
+<section id="equities" class="equities large-12 columns">
+<header class="section-header"><h2 class="sub-head invert">Equities</h2></header>
+<div class="row">
+<div class="large-4 columns">
+<article class="post" role="article"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+	</div>
+</div>
+</section>
+</div>
+<!-- /equities -->
+<div class="division"></div>
+<!-- currencies -->
+<div class="row">
+<section id="currencies" class="currencies large-12 columns">
+<header class="section-header"><h2 class="sub-head invert">Currencies</h2></header>
+<div class="row">
+<div class="large-4 columns">
+<article class="post" role="article"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+	</div>
+</div>
+</section>
+</div>
+<!-- /currencies -->
+<div class="division"></div>
+<!-- economics -->
+<div class="row">
+<section id="economics" class="economics large-12 columns">
+<header class="section-header"><h2 class="sub-head invert">Economics</h2></header>
+<div class="row">
+<div class="large-4 columns">
+<article class="post" role="article"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+	</div>
+</div>
+</section>
+</div>
+<!-- /economics -->
+<div class="division"></div>
+<!-- others -->
+<div class="row">
+<section id="others" class="others large-12 columns">
+<header class="section-header"><h2 class="sub-head invert">Others</h2></header>
+<div class="row">
+<div class="large-4 columns">
+<article class="post" role="article"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+</div>
+<div class="large-4 columns">
+<article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
+<p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
+</time></footer></article>
+	</div>
+</div>
+</section>
+</div>
+<!-- /others -->
+</div>
+<aside class="large-3 columns">
+right
+	</aside>
+
+</div>
+<!--/row-->
+<section id="latest-edition">
+	<div class="row">
+<div class="large-3 large-offset-1 columns"><h2>Master Investor Magazine</h2><h3>Income Hunting 2015</h3><p class="issue">ISSUE 01 APRIL 2015</p><ul class="links"><li><a href="" class="button large">Click here to subscribe</a></li><li><a href="" class="button large">Click here to contribute</a></li></ul></div>
+<div class="large-4 columns"><figure><img src="<?php echo get_template_directory_uri(); ?>/images/devices.png" /></figure></div>
+<div class="large-3 columns end"><nav class="features"><ul><li><h4><a href="">The Naked Trader</a></h4><p>Robbie Burns’ Trading Diary returns</p></li><li><h4><a href="">Zak Mirs' Monthly Pick</a></h4><p>We highlight Apple this month</p></li><li><h4><a href="">The Naked Trader</a></h4><p>Robbie Burns’Trading Diary returns</p></li><li><h4><a href="">The Naked Trader</a></h4><p>Robbie Burns’Trading Diary returns</p></li></ul></nav></div>
+</div>
+</section>
 </main>
-<?php get_footer() ?>
+<?php get_footer() ?> 
