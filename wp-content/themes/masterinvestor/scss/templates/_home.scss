@@ -12,17 +12,28 @@
 		@include abs-pos(auto,auto,0,0);
 	}
 	.slick-next{
-		left:40px;
+		left:65px;
 	}
 	.slide{
 		padding-bottom:40px;
 		figure{
+			margin-bottom:0;
 			&:before{
 				content:"";
 				display: inline-block;
 				padding-top:50%;
 			}
 		}
+	}
+	.page-count{
+		font-family: $bebas;
+		@include font-size(14px);
+		@include abs-pos(auto,auto,0,15px);
+		height:13px;
+		line-height: 13px;
+		width:50px;
+		text-align: center;
+		display: block;
 	}
 }
 #twitter-feed{
@@ -31,6 +42,7 @@
 	margin-bottom: $half-spacing;
 	p{
 		margin-bottom: 0;
+		font-family: $merriweather;
 	}
 	.slider{
 		padding:0 70px;
@@ -45,7 +57,7 @@
 		.slide{
 			width:100%;
 			height:40px;
-			background-color: $light-grey;
+			background-color: white;
 			&:before{
 				content:"";
 				height:40px;

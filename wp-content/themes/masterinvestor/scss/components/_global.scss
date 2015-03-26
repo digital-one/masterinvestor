@@ -67,6 +67,11 @@ figure{
 	width:100%;
 	background-color: $grey;
 	position: relative;
+	margin-bottom: 15px;
+	.image-wrap{
+		@include abs-pos(0,0,0,0);
+		@include bg-cover;
+	}
 	a{
 		display: block;
 		width: 100%;
@@ -125,6 +130,39 @@ article{
 header{
 	&.section-header{
 		margin-bottom: $half-spacing;
+		position: relative;
+		.read-more{
+			font-family: $bebas;
+			@include font-size(16px);
+			height:30px;
+			line-height: 30px;
+			padding:0 20px 0 0;
+			@include abs-pos(50%,0,auto,auto);
+			margin-top:-15px;
+			@include transition(color 0 ease);
+			&:after{
+				content:"";
+				width:16px;
+				height:13px;
+				display: block;
+				background-image:url('../images/slider-next.png');
+				.svg &{
+					background-image:url('../images/slider-next.svg');
+				}
+				background-repeat:no-repeat;
+				background-position:left top;
+				background-size:auto 100%;
+				@include abs-pos(50%,0,auto,auto);
+				margin-top: -6px;
+
+			}
+			&:hover,&:active{
+				&:after{
+					background-position: right top;
+				}
+				
+			}
+		}
 	}
 	&.avatar-header{
 		padding: 0 0 0 90px;

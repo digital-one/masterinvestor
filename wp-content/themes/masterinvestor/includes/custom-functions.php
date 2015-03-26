@@ -9,12 +9,28 @@ function scripts_and_styles() {
 		//wp_register_script( 'respondjs', get_stylesheet_directory_uri() . '/library/js/libs/min/respond.min.js', array('jquery'), null, false );
 		//wp_enqueue_script( 'respondjs' );
 		
-		
+		//jquery
+	  wp_deregister_script( 'jquery' );
+	  wp_register_script( 'jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", false, null );
+	  wp_enqueue_script( 'jquery' );
+
+
 		// modernizr (without media query polyfill)
 		wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/js/modernizr.js', array(), '2.5.3', false );
 		wp_enqueue_script( 'modernizr' );
 
-		
+		//slick slider
+	  	wp_register_script(  'slick', get_stylesheet_directory_uri() . '/js/slick/slick.min.js', array(), '1.4.1', false  );
+	  	wp_enqueue_script( 'slick' );
+
+		// modernizr 
+		wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/js/modernizr.js', array(), null, false );
+		wp_enqueue_script( 'modernizr' );
+
+		//twitter fetcher
+		wp_register_script( 'twitter_fetcher', get_stylesheet_directory_uri() . '/js/twitter-fetcher.js', array(), null, false );
+  		wp_enqueue_script( 'twitter_fetcher' );
+
 		// register main stylesheet
 		wp_register_style( 'stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
 		wp_enqueue_style( 'stylesheet' );

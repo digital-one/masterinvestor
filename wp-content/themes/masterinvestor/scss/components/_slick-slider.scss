@@ -39,20 +39,23 @@
 	}
 }
 .slick-prev,.slick-next{
-	width:15px;
-	height:auto;
+	width:16px;
+	height: 13px;
 	display: block;
 	background-image:url('../images/slider-prev.png');
 	.svg &{
 		background-image:url('../images/slider-prev.svg');
 	}
-	background-position: center center;
+	background-position: left top;
 	background-repeat:no-repeat;
-	background-size:100% auto;
+	background-size:auto 100%;
 	position: relative;
 	z-index: 9999;
 	background-color: transparent;
 	@extend %ir;
+	&:hover,&:active{
+		background-position: right top;
+	}
 }
 .slick-next{
 	background-image: url('../images/slider-next.png');

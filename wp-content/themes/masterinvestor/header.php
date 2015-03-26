@@ -32,7 +32,11 @@
 	<header id="header">
 		<div class="row">
 			<div class="small-12 large-5 columns">
+				<?php if(is_front_page()): ?>
 	<h1 id="home-link"><img src="<?php echo get_template_directory_uri(); ?>/images/master-investor.svg" alt="Master Investor" /></h1>
+<?php else: ?>
+	<a href="<?php echo home_url() ?>" id="home-link"><img src="<?php echo get_template_directory_uri(); ?>/images/master-investor.svg" alt="Master Investor" /></a>
+<?php endif ?>
 </div>
 <div class="small-12 large-3 columns subscribe">
 
