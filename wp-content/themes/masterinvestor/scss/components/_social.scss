@@ -5,6 +5,7 @@ nav.social{
 		padding:15px 0;
 		text-align: center;
 		height:67px;
+		margin-bottom: 36px;
 		@extend %clearfix;
 		div{
 			display: inline-block;
@@ -105,12 +106,56 @@ nav.social{
 		}
 	}
 }
+@media #{$medium-only} { 
+
+	nav.social{
+		aside &{
+			height: auto;
+			span{
+				display: block;
+				width:100%;
+				text-align: center;
+				padding:0;
+			}
+			ul{
+				float: none;
+			}
+			div{
+				height: auto;
+			}
+		}
+	}
+
+}
+
+@media #{$large-only} { 
+
+	nav.social{
+		aside &{
+			height: auto;
+			span{
+				display: block;
+				width:100%;
+				text-align: center;
+				padding:0;
+			}
+			ul{
+				float: none;
+			}
+			div{
+				height: auto;
+			}
+		}
+	}
+
+}
 
 
 @media #{$xlarge-up} { 
 
 	nav.social{
 		ul{
+			float: left;
 			li{
 				margin-right: 10px;
 				a{

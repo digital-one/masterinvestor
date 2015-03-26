@@ -3253,34 +3253,48 @@ header#header form button {
   background-color: white;
 }
 
+@media only screen and (min-width: 48rem) {
+  /* line 74, ../scss/components/_footer.scss */
+  #footer {
+    padding-bottom: 54px;
+  }
+  /* line 76, ../scss/components/_footer.scss */
+  #footer a.anchor-up {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    position: absolute;
+  }
+}
 @media only screen and (min-width: 64rem) and (max-width: 81.1875rem) {
-  /* line 75, ../scss/components/_footer.scss */
+  /* line 86, ../scss/components/_footer.scss */
   #footer .ginput_container, #footer .gfield_label {
     width: 100%;
   }
-  /* line 78, ../scss/components/_footer.scss */
+  /* line 89, ../scss/components/_footer.scss */
   #footer .gfield_label {
     height: auto;
     line-height: 100%;
     margin-bottom: 4px;
   }
-  /* line 83, ../scss/components/_footer.scss */
+  /* line 94, ../scss/components/_footer.scss */
   #footer .gform_footer {
     padding-left: 0;
   }
 }
 @media only screen and (min-width: 64rem) {
-  /* line 93, ../scss/components/_footer.scss */
+  /* line 104, ../scss/components/_footer.scss */
   #footer {
     padding: 54px 0 54px;
   }
-  /* line 95, ../scss/components/_footer.scss */
+  /* line 106, ../scss/components/_footer.scss */
   #footer .column-inner {
     padding-right: 0;
   }
 }
 @media only screen and (min-width: 81.25rem) {
-  /* line 105, ../scss/components/_footer.scss */
+  /* line 116, ../scss/components/_footer.scss */
   #footer .column-inner {
     padding-right: 30px;
   }
@@ -3934,14 +3948,15 @@ header.avatar-header .avatar {
   margin-top: 36px;
   background-color: #f1f1f2;
   border: 1px solid #939598;
+  margin: 0 0 36px;
 }
-/* line 151, ../scss/components/_global.scss */
+/* line 152, ../scss/components/_global.scss */
 .latest-edition header {
   background-color: #231f20;
   color: white;
   padding: 10px;
 }
-/* line 155, ../scss/components/_global.scss */
+/* line 156, ../scss/components/_global.scss */
 .latest-edition header h3 {
   font-family: "BebasNeueBold_gdi", sans-serif;
   color: white;
@@ -3950,19 +3965,19 @@ header.avatar-header .avatar {
   text-align: center;
   margin: 0;
 }
-/* line 163, ../scss/components/_global.scss */
+/* line 164, ../scss/components/_global.scss */
 .latest-edition main {
   padding: 15px;
   display: block;
   text-align: right;
   position: relative;
 }
-/* line 168, ../scss/components/_global.scss */
+/* line 169, ../scss/components/_global.scss */
 .latest-edition main img {
   width: 70%;
   height: auto;
 }
-/* line 172, ../scss/components/_global.scss */
+/* line 173, ../scss/components/_global.scss */
 .latest-edition main .flash {
   width: 177px;
   height: 177px;
@@ -3979,7 +3994,7 @@ header.avatar-header .avatar {
   position: absolute;
 }
 
-/* line 183, ../scss/components/_global.scss */
+/* line 184, ../scss/components/_global.scss */
 .breadcrumbs {
   font-size: 12px;
   font-size: 0.75rem;
@@ -4172,15 +4187,16 @@ aside nav.social {
   padding: 15px 0;
   text-align: center;
   height: 67px;
+  margin-bottom: 36px;
 }
-/* line 9, ../scss/components/_social.scss */
+/* line 10, ../scss/components/_social.scss */
 aside nav.social div {
   display: inline-block;
   margin: 0 auto;
   height: 34px;
   overflow: hidden;
 }
-/* line 16, ../scss/components/_social.scss */
+/* line 17, ../scss/components/_social.scss */
 nav.social span {
   display: inline-block;
   height: 34px;
@@ -4192,21 +4208,21 @@ nav.social span {
   padding-right: 20px;
   text-transform: uppercase;
 }
-/* line 26, ../scss/components/_social.scss */
+/* line 27, ../scss/components/_social.scss */
 nav.social ul {
   margin: 0;
   float: left;
 }
-/* line 29, ../scss/components/_social.scss */
+/* line 30, ../scss/components/_social.scss */
 nav.social ul li {
   margin-right: 5px;
   display: block;
 }
-/* line 32, ../scss/components/_social.scss */
+/* line 33, ../scss/components/_social.scss */
 nav.social ul li:last-child {
   margin-right: 0;
 }
-/* line 35, ../scss/components/_social.scss */
+/* line 36, ../scss/components/_social.scss */
 nav.social ul li a {
   display: block;
   width: 34px;
@@ -4223,100 +4239,146 @@ nav.social ul li a {
   background-repeat: no-repeat;
   background-size: 19px auto;
 }
-/* line 41, ../scss/components/_social.scss */
+/* line 42, ../scss/components/_social.scss */
 nav.social ul li a:link, nav.social ul li a:visited {
   background-color: #939598;
 }
-/* line 43, ../scss/components/_social.scss */
+/* line 44, ../scss/components/_social.scss */
 #footer nav.social ul li a:link, #footer nav.social ul li a:visited {
   background-color: #27aae1;
 }
-/* line 47, ../scss/components/_social.scss */
+/* line 48, ../scss/components/_social.scss */
 nav.social ul li a:hover, nav.social ul li a:active {
   background-color: #27aae1;
 }
-/* line 49, ../scss/components/_social.scss */
+/* line 50, ../scss/components/_social.scss */
 #footer nav.social ul li a:hover, #footer nav.social ul li a:active {
   background-color: white;
 }
-/* line 55, ../scss/components/_social.scss */
+/* line 56, ../scss/components/_social.scss */
 #footer nav.social ul li a {
   background-image: url("../images/facebook-circle-grey.png");
 }
-/* line 58, ../scss/components/_social.scss */
+/* line 59, ../scss/components/_social.scss */
 .svg nav.social ul li a {
   background-image: url("../images/facebook-circle.svg");
 }
-/* line 60, ../scss/components/_social.scss */
+/* line 61, ../scss/components/_social.scss */
 #footer .svg nav.social ul li a {
   background-image: url("../images/facebook-circle-grey.svg");
 }
-/* line 67, ../scss/components/_social.scss */
+/* line 68, ../scss/components/_social.scss */
 nav.social ul li a.twitter {
   background-image: url("../images/twitter-circle.png");
   background-size: 23px auto;
 }
-/* line 69, ../scss/components/_social.scss */
+/* line 70, ../scss/components/_social.scss */
 #footer nav.social ul li a.twitter {
   background-image: url("../images/twitter-circle-grey.png");
 }
-/* line 72, ../scss/components/_social.scss */
+/* line 73, ../scss/components/_social.scss */
 .svg nav.social ul li a.twitter {
   background-image: url("../images/twitter-circle.svg");
 }
-/* line 74, ../scss/components/_social.scss */
+/* line 75, ../scss/components/_social.scss */
 #footer .svg nav.social ul li a.twitter {
   background-image: url("../images/twitter-circle-grey.svg");
 }
-/* line 80, ../scss/components/_social.scss */
+/* line 81, ../scss/components/_social.scss */
 nav.social ul li a.linkedin {
   background-image: url("../images/linkedin-circle.png");
 }
-/* line 82, ../scss/components/_social.scss */
+/* line 83, ../scss/components/_social.scss */
 #footer nav.social ul li a.linkedin {
   background-image: url("../images/linkedin-circle-grey.png");
 }
-/* line 85, ../scss/components/_social.scss */
+/* line 86, ../scss/components/_social.scss */
 .svg nav.social ul li a.linkedin {
   background-image: url("../images/linkedin-circle.svg");
 }
-/* line 87, ../scss/components/_social.scss */
+/* line 88, ../scss/components/_social.scss */
 #footer .svg nav.social ul li a.linkedin {
   background-image: url("../images/linkedin-circle-grey.svg");
 }
-/* line 92, ../scss/components/_social.scss */
+/* line 93, ../scss/components/_social.scss */
 nav.social ul li a.vimeo {
   background-image: url("../images/vimeo-circle.png");
 }
-/* line 94, ../scss/components/_social.scss */
+/* line 95, ../scss/components/_social.scss */
 #footer nav.social ul li a.vimeo {
   background-image: url("../images/vimeo-circle-grey.png");
 }
-/* line 97, ../scss/components/_social.scss */
+/* line 98, ../scss/components/_social.scss */
 .svg nav.social ul li a.vimeo {
   background-image: url("../images/vimeo-circle.svg");
 }
-/* line 99, ../scss/components/_social.scss */
+/* line 100, ../scss/components/_social.scss */
 #footer .svg nav.social ul li a.vimeo {
   background-image: url("../images/vimeo-circle-grey.svg");
 }
 
-@media only screen and (min-width: 81.25rem) {
+@media only screen and (min-width: 48rem) and (max-width: 63.9375rem) {
+  /* line 112, ../scss/components/_social.scss */
+  aside nav.social {
+    height: auto;
+  }
   /* line 114, ../scss/components/_social.scss */
+  aside nav.social span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  /* line 120, ../scss/components/_social.scss */
+  aside nav.social ul {
+    float: none;
+  }
+  /* line 123, ../scss/components/_social.scss */
+  aside nav.social div {
+    height: auto;
+  }
+}
+@media only screen and (min-width: 64rem) and (max-width: 81.1875rem) {
+  /* line 134, ../scss/components/_social.scss */
+  aside nav.social {
+    height: auto;
+  }
+  /* line 136, ../scss/components/_social.scss */
+  aside nav.social span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+  }
+  /* line 142, ../scss/components/_social.scss */
+  aside nav.social ul {
+    float: none;
+  }
+  /* line 145, ../scss/components/_social.scss */
+  aside nav.social div {
+    height: auto;
+  }
+}
+@media only screen and (min-width: 81.25rem) {
+  /* line 157, ../scss/components/_social.scss */
+  nav.social ul {
+    float: left;
+  }
+  /* line 159, ../scss/components/_social.scss */
   nav.social ul li {
     margin-right: 10px;
   }
-  /* line 116, ../scss/components/_social.scss */
+  /* line 161, ../scss/components/_social.scss */
   nav.social ul li a {
     width: 37px;
     height: 37px;
   }
-  /* line 122, ../scss/components/_social.scss */
+  /* line 167, ../scss/components/_social.scss */
   nav.social span {
     height: 37px;
     line-height: 37px;
   }
-  /* line 127, ../scss/components/_social.scss */
+  /* line 172, ../scss/components/_social.scss */
   aside nav.social div {
     height: 37px;
   }
@@ -4716,14 +4778,14 @@ nav.social ul li a.vimeo {
   }
 }
 /* line 3, ../scss/templates/_category.scss */
-.archive article h2 {
+.archive article.post h2 {
   font-size: 22px;
   font-size: 1.375rem;
   margin-bottom: 10px;
 }
 /* line 7, ../scss/templates/_category.scss */
-.archive article figure {
-  margin: 0;
+.archive article.post figure {
+  margin: 0 0 20px;
 }
 
 /* line 14, ../scss/templates/_category.scss */
@@ -4731,21 +4793,26 @@ nav.social ul li a.vimeo {
   margin: 0;
 }
 /* line 17, ../scss/templates/_category.scss */
+.archive-menu li {
+  margin-bottom: 10px;
+}
+/* line 20, ../scss/templates/_category.scss */
 .archive-menu h5 {
   margin-bottom: 5px;
   line-height: 130%;
 }
-/* line 21, ../scss/templates/_category.scss */
+/* line 24, ../scss/templates/_category.scss */
 .archive-menu p {
   font-size: 12px;
   font-size: 0.75rem;
   line-height: 120%;
 }
-/* line 25, ../scss/templates/_category.scss */
-.archive-menu figure {
-  width: 120%;
-}
 /* line 28, ../scss/templates/_category.scss */
+.archive-menu figure {
+  width: 110%;
+  margin-bottom: 10px;
+}
+/* line 32, ../scss/templates/_category.scss */
 .archive-menu footer {
   font-family: "Merriweather", serif;
   font-size: 12px;
@@ -4754,7 +4821,7 @@ nav.social ul li a.vimeo {
   padding: 0 0 20px;
 }
 
-/* line 36, ../scss/templates/_category.scss */
+/* line 40, ../scss/templates/_category.scss */
 header h4 {
   background-color: #27aae1;
   color: white;
@@ -4765,7 +4832,7 @@ header h4 {
   padding: 12px 10px 12px 45px;
   position: relative;
 }
-/* line 44, ../scss/templates/_category.scss */
+/* line 48, ../scss/templates/_category.scss */
 header h4:before {
   content: "";
   width: 24px;
@@ -4786,7 +4853,7 @@ header h4:before {
 .svg header h4:before {
   background-image: url("../images/icon-book.svg");
 }
-/* line 52, ../scss/templates/_category.scss */
+/* line 56, ../scss/templates/_category.scss */
 .evil-diaries header h4:before {
   background-image: url("../images/icon-evil-diaries.png");
   background-position: left top;
@@ -4797,7 +4864,7 @@ header h4:before {
 .svg .evil-diaries header h4:before {
   background-image: url("../images/icon-evil-diaries.svg");
 }
-/* line 55, ../scss/templates/_category.scss */
+/* line 59, ../scss/templates/_category.scss */
 .economics header h4:before {
   background-image: url("../images/icon-economics.png");
   background-position: left top;
@@ -4808,7 +4875,7 @@ header h4:before {
 .svg .economics header h4:before {
   background-image: url("../images/icon-economics.svg");
 }
-/* line 58, ../scss/templates/_category.scss */
+/* line 62, ../scss/templates/_category.scss */
 .equities header h4:before {
   background-image: url("../images/icon-equities.png");
   background-position: left top;
@@ -4819,7 +4886,7 @@ header h4:before {
 .svg .equities header h4:before {
   background-image: url("../images/icon-equities.svg");
 }
-/* line 61, ../scss/templates/_category.scss */
+/* line 65, ../scss/templates/_category.scss */
 .currencies header h4:before {
   background-image: url("../images/icon-currencies.png");
   background-position: left top;
@@ -4830,7 +4897,7 @@ header h4:before {
 .svg .currencies header h4:before {
   background-image: url("../images/icon-currencies.svg");
 }
-/* line 64, ../scss/templates/_category.scss */
+/* line 68, ../scss/templates/_category.scss */
 .others header h4:before {
   background-image: url("../images/icon-other.png");
   background-position: left top;
@@ -4844,9 +4911,31 @@ header h4:before {
   background-image: url("../images/icon-other.svg");
 }
 
+@media only screen and (min-width: 48rem) {
+  /* line 79, ../scss/templates/_category.scss */
+  .archive-menu figure {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  /* line 88, ../scss/templates/_category.scss */
+  article.post figure {
+    margin: 0;
+  }
+
+  /* line 93, ../scss/templates/_category.scss */
+  .archive-menu figure {
+    width: 120%;
+    margin: 0;
+  }
+  /* line 97, ../scss/templates/_category.scss */
+  .archive-menu li {
+    margin-bottom: 0;
+  }
+}
 /* line 2, ../scss/templates/_single.scss */
 .single article.post {
-  padding-right: 40px;
+  padding-right: 0;
 }
 /* line 5, ../scss/templates/_single.scss */
 .single article.post header p {
@@ -4874,4 +4963,11 @@ header h4:before {
 /* line 26, ../scss/templates/_single.scss */
 .single article.post footer {
   margin: 36px 0;
+}
+
+@media only screen and (min-width: 48rem) {
+  /* line 38, ../scss/templates/_single.scss */
+  .single article.post {
+    padding-right: 40px;
+  }
 }

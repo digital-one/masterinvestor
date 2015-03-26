@@ -69,6 +69,17 @@
 	}
 }
 
+@media #{$medium-up}{
+
+	#footer{
+		padding-bottom: $spacing;
+		a.anchor-up{
+			@include abs-pos(auto,0,0,auto);
+		}
+	}
+	
+}
+
 @media #{$large-only}{
 
 	#footer{

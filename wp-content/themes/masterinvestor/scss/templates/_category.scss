@@ -1,11 +1,11 @@
 .archive{
-	article{
+	article.post{
 		h2{
 			@include font-size(22px);
 			margin-bottom: 10px;
 		}
 		figure{
-			margin:0;
+			margin:0 0 20px;
 		}
 	}
 }
@@ -13,6 +13,9 @@
 	@extend %clearfix;
 	ul{
 		margin:0;
+	}
+	li{
+		margin-bottom: 10px;
 	}
 	h5{
 		margin-bottom: 5px;
@@ -23,7 +26,8 @@
 		line-height: 120%;
 	}
 	figure{
-		width: 120%;
+		width: 110%;
+		margin-bottom: 10px;
 	}
 	footer{
 		font-family: $merriweather;
@@ -67,4 +71,32 @@ header h4{
 			margin-top: -14px;
 		}
 	}
+}
+
+@media #{$medium-up} { 
+
+	.archive-menu{
+		figure{
+			width:100%;
+		}
+	}
+}
+
+@media #{$large-up} { 
+
+	article.post{
+		figure{
+			margin:0;
+		}
+	}
+	.archive-menu{
+		figure{
+			width: 120%;
+			margin:0;
+		}
+		li{
+			margin-bottom: 0;
+		}
+	}
+
 }

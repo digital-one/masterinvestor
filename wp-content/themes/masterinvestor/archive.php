@@ -28,8 +28,8 @@ else:
 $src = get_template_directory_uri().'/images/no-image.jpg';
 endif;
 ?>
-<div class="large-3 columns"><figure><a href="<?php the_permalink() ?>"><img src="<?php echo $src ?>" /></a></figure></div>
-<div class="large-9 columns"><header><h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?></a></h2>
+<div class="medium-3 columns"><figure><a href="<?php the_permalink() ?>"><img src="<?php echo $src ?>" /></a></figure></div>
+<div class="medium-9 columns"><header><h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?></a></h2>
 	<p><span class="author">By <?php the_author_link( get_the_author_meta( 'ID' )) ?></span></p>
 </header>
 <?php the_excerpt(); ?>
@@ -37,9 +37,9 @@ endif;
 </div>
 </div>
 </article>
-<?php if($count!=$num_posts): ?>
+<?php //if($count!=$num_posts): ?>
 <div class="division"></div>
-<?php endif ?>
+<?php //endif ?>
 <?php $count++ ?>
 <?php endwhile ?>
 <?php else: ?>
@@ -55,30 +55,73 @@ endif;
 
 <footer></footer>
 </div>
-<aside class="large-3 columns">
+<aside class="small-12 large-3 columns">
 	<nav class="social"><div><span>FOLLOW US</span><ul><li><a href="" class="twitter">Twitter</a></li><li><a href="">Facebook</a></li><li><a href="" class="linkedin">Linkedin</a></li><li><a href="" class="vimeo">Vimeo</a></li></ul></div></nav>
-<section class="latest-edition">
+	
+<section class="latest-edition show-for-large-up">
 	<a href="">
 <header><h3>View the Latest Edition out now!</h3></header>
 <main><div class="flash">Available to view on all mobile devices</div><img src="<?php echo get_template_directory_uri(); ?>/images/devices.png" /></main>
 </a>
 </section>
+
 <section class="archive-menu tint">
-	<div class="large-12 columns">
+	<div class="medium-12 columns">
 <nav class="equities">
 <header><h4>Equities</h4></header>
+<div class="row">
 <ul>
-	<li class="row"><div class="large-4 columns"><figure class="ratio-16-9"><a href="">image</a></figure></div><div class="large-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></li>
-	<li class="row"><div class="large-4 columns"><figure class="ratio-16-9"><a href="">image</a></figure></div><div class="large-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></li>
+	<li class="small-12 medium-3 large-12 columns">
+		<div class="row">
+		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
+		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
+	</li>
+	<li class="small-12 medium-3 large-12 columns">
+		<div class="row">
+		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
+		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
+	</li>
+	<li class="small-12 medium-3 large-12 columns">
+		<div class="row">
+		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
+		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
+	</li>
+	<li class="small-12 medium-3 large-12 columns">
+		<div class="row">
+		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
+		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
+	</li>
 </ul>
+</div>
 <footer><a href="">More Equities</a></footer>
 </nav>
 <nav class="evil-diaries">
 <header><h4>The Evil Diaries</h4></header>
+<div class="row">
 <ul>
-	<li class="row"><div class="large-4 columns"><figure class="ratio-16-9"><a href="">image</a></figure></div><div class="large-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></li>
-	<li class="row"><div class="large-4 columns"><figure class="ratio-16-9"><a href="">image</a></figure></div><div class="large-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></li>
+	<li class="small-12 medium-3 large-12 columns">
+		<div class="row">
+		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
+		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
+	</li>
+
+	<li class="small-12 medium-3 large-12 columns">
+		<div class="row">
+		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
+		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
+	</li>
+	<li class="small-12 medium-3 large-12 columns">
+		<div class="row">
+		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
+		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
+	</li>
+	<li class="small-12 medium-3 large-12 columns">
+		<div class="row">
+		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
+		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
+	</li>
 </ul>
+</div>
 <footer><a href="">More Equities</a></footer>
 </nav>
 </div>

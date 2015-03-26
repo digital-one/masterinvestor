@@ -1,6 +1,6 @@
 .single{
 	article.post{
-		padding-right:40px;
+		padding-right:0;
 		header{
 			p{
 				@include font-size(12px);
@@ -28,4 +28,16 @@
 		}
 	}
 	
+}
+
+
+
+@media #{$medium-up} {
+
+	.single{
+		article.post{
+			padding-right:40px;
+		}
+	}
+
 }
