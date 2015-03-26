@@ -120,7 +120,16 @@ nav#nav{
 	}
 }
 @media #{$large-up} { 
-
+	nav#nav{
+		li{
+			a{
+				&:hover,&:active{
+					background-color:$blue; 
+				}
+			}	
+		}	
+	}
+	
 }
 @media #{$xlarge-up} { 
 	
