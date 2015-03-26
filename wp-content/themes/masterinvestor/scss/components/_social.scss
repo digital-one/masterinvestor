@@ -9,34 +9,33 @@ nav.social{
 		div{
 			display: inline-block;
 			margin:0 auto;
-			height:37px;
+			height:34px;
 			overflow:hidden;
 		}
-		span{
-			display: inline-block;
-			height:37px;
-			line-height: 37px;
-			float:left;
-			@include font-size(16px);
-			font-family: $merriweather;
-			padding-right:20px;
-		}
-		ul{
-			float: left;
-		}
+	}
+	span{
+		display: inline-block;
+		height:34px;
+		line-height: 34px;
+		float:left;
+		@include font-size(16px);
+		font-family: $merriweather;
+		padding-right:20px;
+		text-transform: uppercase;
 	}
 	ul{
 		margin:0;
+		float: left;
 		li{
-			margin-right: 10px;
+			margin-right: 5px;
 			display: block;
 			&:last-child{
 				margin-right:0;
 			}
 			a{
 				display: block;
-				width:37px;
-				height:37px;
+				width:34px;
+				height:34px;
 				line-height: 100%;
 				@include border-radius(50%);
 				&:link,&:visited{
@@ -102,6 +101,31 @@ nav.social{
 						}
 					}	
 				}
+			}
+		}
+	}
+}
+
+
+@media #{$xlarge-up} { 
+
+	nav.social{
+		ul{
+			li{
+				margin-right: 10px;
+				a{
+					width:37px;
+					height:37px;
+				}
+			}
+		}
+		span{
+			height:37px;
+			line-height: 37px;
+		}
+		aside &{
+			div{
+				height:37px;
 			}
 		}
 	}

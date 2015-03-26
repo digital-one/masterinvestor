@@ -1,30 +1,30 @@
 <footer id="footer">
 <div class="row">
 	<a href="#" class="anchor-up">Up</a>
-<div class="large-4 columns">
+<div class="small-12 large-4 columns">
 	<section id="most-popular">
 	<div class="column-inner">
 <h4>Most Popular</h4>
 <div class="row">
-<article class="large-6 columns">
+<article class="small-6 medium-3 large-6 columns">
 	<a href="#">
 <figure class="ratio-16-9"></figure>
 <h5>How BuzzFeed is Taking Over the World</h5>
 </a>
 </article>
-<article class="large-6 columns">
+<article class="small-6 medium-3 large-6 columns">
 	<a href="#">
 <figure class="ratio-16-9"></figure>
 <h5>How BuzzFeed is Taking Over the World</h5>
 </a>
 </article>
-<article class="large-6 columns">
+<article class="small-6 medium-3 large-6 columns">
 	<a href="#">
 <figure class="ratio-16-9"></figure>
 <h5>How BuzzFeed is Taking Over the World</h5>
 </a>
 </article>
-<article class="large-6 columns">
+<article class="small-6 medium-3 large-6 columns">
 	<a href="#">
 <figure class="ratio-16-9"></figure>
 <h5>How BuzzFeed is Taking Over the World</h5>
@@ -34,24 +34,26 @@
 </div>
 </section>
 </div>
-<div class="large-2 columns">
+<div class="medium-3 large-2 columns">
 	<div class="column-inner">
 		<section id="sections">
 <h4>Sections</h4>
 <nav id="footer-menu">
-	<ul>
-		<li><a href="">Most Read</a></li>
-<li><a href="">Equities</a></li>
-<li><a href="">Evil Diaries</a></li>
-<li><a href="">Currencies</a></li>
-<li><a href="">Economics</a></li>
-<li><a href="">Other</a></li>
-<li><a href="">About Us</a></li>
-<li><a href="">Contact Us</a></li></ul></nav>
+	<?php
+  wp_nav_menu( array(
+        'menu'=>'Footer Menu',
+        'container' => false, 
+        'fallback_cb' => 'wp_page_menu'//,
+        //'walker' => new subMenu()
+        //'menu_class' => 'inline',
+        //'link_after' => '<span></span>'
+        )
+    );
+    ?></nav>
 </section>
 </div>
 	</div>
-	<div class="large-2 columns">
+	<div class="medium-3 columns">
 		<div class="column-inner">
 			<section id="social">
 <h4>Social</h4>
@@ -66,15 +68,16 @@
 </section>
 </div>
 	</div>
-	<div class="large-3 columns">
+	<div class="medium-6 large-3 columns">
 <h4>Subscribe</h4>
+
+<?php gravity_form(1, false, false, false, '', true, 1);  ?>
 	</div>
-	<div class="large-1 columns">
-column
-	</div>
+
 </div>
 </footer>
-
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5513089e28128351" async="async"></script>
 <?php wp_footer() ?>
 </body>
 </html>

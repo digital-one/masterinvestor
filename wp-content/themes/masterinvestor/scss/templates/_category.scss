@@ -1,4 +1,4 @@
-.category{
+.archive{
 	article{
 		h2{
 			@include font-size(22px);
@@ -11,18 +11,60 @@
 }
 .archive-menu{
 	@extend %clearfix;
-	h4{
-		background-color: $blue;
-		color: white;
-		margin-bottom: 15px;
-		@include font-size(16px);
-		text-transform: uppercase;
-		padding: 8px 10px;
+	ul{
+		margin:0;
 	}
 	h5{
-		margin-bottom: 10px;
+		margin-bottom: 5px;
+		line-height: 130%;
 	}
 	p{
 		@include font-size(12px);
+		line-height: 120%;
+	}
+	figure{
+		width: 120%;
+	}
+	footer{
+		font-family: $merriweather;
+		@include font-size(12px);
+		text-transform: uppercase;
+		padding:0 0 20px;
+	}
+}
+
+header h4{
+	background-color: $blue;
+	color: white;
+	margin-bottom: 15px;
+	@include font-size(16px);
+	text-transform: uppercase;
+	padding: 12px 10px 12px 45px;
+	position: relative;
+	&:before{
+		content:"";
+		width:24px;
+		height:24px;
+		@include abs-pos(50%,auto,auto,10px);
+		display: block;
+		@include bg-image('../images/icon-book');
+		margin-top:-12px;
+		.evil-diaries &{
+			@include bg-image('../images/icon-evil-diaries');
+		}
+		.economics &{
+			@include bg-image('../images/icon-economics');
+		}
+		.equities &{
+			@include bg-image('../images/icon-equities');
+		}
+		.currencies &{
+			@include bg-image('../images/icon-currencies');	
+		}
+		.others &{
+			@include bg-image('../images/icon-other');
+			width:36px;
+			margin-top: -14px;
+		}
 	}
 }

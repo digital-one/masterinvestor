@@ -3,13 +3,13 @@
   <!-- feature -->
 <section id="feature">
 <div class="row">
-<div class="large-9 columns">
+<div class="small-12 xlarge-9 columns">
   <!--slider-->
   <div id="slider" class="slick-slider">
   <!--slide-->
 <div class="slide">
   <div class="row">
-    <div class="large-4 columns">
+    <div class="small-12 large-6 xlarge-4 columns">
     	<header class="section-header">
 <h2 class="sub-head">Feature</h2>
 </header>
@@ -17,16 +17,17 @@
 <p class="author">By Jim Mellon</p>
 <p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 </div>
-<div class="large-8 columns"><figure class="ratio-16-9" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/north-sea.jpg';);">image</figure></div>
+<div class="small-12  large-6 xlarge-8 columns"><figure style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/north-sea.jpg';);">image</figure></div>
 </div>
 </div>
-</div>
-<!--/slide-->
 <button class="slick-prev">Previous</button>
 <button class="slick-next">Next</button>
 </div>
+<!--/slide-->
+
+</div>
 <!--/slider-->
-<aside class="large-3 columns">
+<aside class="large-3 columns show-for-xlarge-up">
 ads
 </aside>
 </div>
@@ -59,27 +60,27 @@ ads
 <!-- /twitter feed -->
 <!--must reads row-->
 <div class="row">
-<section id="must-reads" class="large-9 columns">
+<section id="must-reads" class="latest-articles small-12 xlarge-9 columns">
 <header class="section-header"><h2 class="sub-head invert">Must reads</h2></header>
 <div class="row">
-<div class="large-4 columns">
+<div class="small-12 medium-6 large-4 columns">
 <article class="post" role="article"><header class="avatar-header"><a href="" class="avatar">Author</a><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-6 large-4 columns">
 <article class="post"><header class="avatar-header"><a href="" class="avatar">Author</a><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-6 large-4 columns">
 <article class="post"><header class="avatar-header"><a href="" class="avatar">Author</a><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 	</div>
 </div>
 </section>
-<aside class="large-3 columns">
+<aside class="small-3 columns show-for-xlarge-up">
 <section class="latest-edition">
 	<a href="">
 <header><h3>View the Latest Edition out now!</h3></header>
@@ -97,24 +98,24 @@ ads
 </div>
 <!--row-->
 <div class="row section-wrap">
-<div class="large-9 columns">
+<div class="small-12 large-9 columns">
 	<!--evil diaries-->
 
-<section id="evil-diaries" class="evil-diaries large-12 columns tint">
+<section id="evil-diaries" class="latest-articles evil-diaries large-12 columns tint">
 
 <header class="section-header avatar-header fixed-height"><a href="" class="avatar">Author</a><div class="vertical-center"><div class="vcenter"><h2 class="sub-head invert">Evil Diaries</h2></div></div></header>
 <div class="row">
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post" role="article"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
@@ -126,20 +127,20 @@ ads
 	<div class="division"></div>
 <!-- equities -->
 <div class="row">
-<section id="equities" class="equities large-12 columns">
+<section id="equities" class="latest-articles equities large-12 columns">
 <header class="section-header"><h2 class="sub-head invert">Equities</h2></header>
 <div class="row">
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post" role="article"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
@@ -151,20 +152,20 @@ ads
 <div class="division"></div>
 <!-- currencies -->
 <div class="row">
-<section id="currencies" class="currencies large-12 columns">
+<section id="currencies" class="latest-articles currencies large-12 columns">
 <header class="section-header"><h2 class="sub-head invert">Currencies</h2></header>
 <div class="row">
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post" role="article"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
@@ -176,20 +177,20 @@ ads
 <div class="division"></div>
 <!-- economics -->
 <div class="row">
-<section id="economics" class="economics large-12 columns">
+<section id="economics" class="latest-articles economics large-12 columns">
 <header class="section-header"><h2 class="sub-head invert">Economics</h2></header>
 <div class="row">
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post" role="article"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
@@ -201,20 +202,20 @@ ads
 <div class="division"></div>
 <!-- others -->
 <div class="row">
-<section id="others" class="others large-12 columns">
+<section id="others" class="latest-articles others large-12 columns">
 <header class="section-header"><h2 class="sub-head invert">Others</h2></header>
 <div class="row">
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post" role="article"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Tuesday’s Stock Market Report</h3><p class="author">By Jim Mellon</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Trading from home</h3><p class="author">By Paul Faulkner</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
 </div>
-<div class="large-4 columns">
+<div class="small-12 medium-4 columns">
 <article class="post"><figure class="ratio-16-9">image</figure><header><p class="category"><small><a href="">Technology Corner</a></small></p><h3>Media/Telecom Plays</h3><p class="author">By Samuel Rae</p></header><p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
 <p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have. </p><footer><time datetime=""><small>March 15, 2015, 2:46 PM EDT</small>
 </time></footer></article>
@@ -224,17 +225,17 @@ ads
 </div>
 <!-- /others -->
 </div>
-<aside class="large-3 columns">
-right
+<aside class="small-12 large-3 columns">
+ads column
 	</aside>
 
 </div>
 <!--/row-->
 <section id="latest-edition">
 	<div class="row">
-<div class="large-3 large-offset-1 columns"><h2>Master Investor Magazine</h2><h3>Income Hunting 2015</h3><p class="issue">ISSUE 01 APRIL 2015</p><ul class="links"><li><a href="" class="button large">Click here to subscribe</a></li><li><a href="" class="button large">Click here to contribute</a></li></ul></div>
-<div class="large-4 columns"><figure><img src="<?php echo get_template_directory_uri(); ?>/images/devices.png" /></figure></div>
-<div class="large-3 columns end"><nav class="features"><ul><li><h4><a href="">The Naked Trader</a></h4><p>Robbie Burns’ Trading Diary returns</p></li><li><h4><a href="">Zak Mirs' Monthly Pick</a></h4><p>We highlight Apple this month</p></li><li><h4><a href="">The Naked Trader</a></h4><p>Robbie Burns’Trading Diary returns</p></li><li><h4><a href="">The Naked Trader</a></h4><p>Robbie Burns’Trading Diary returns</p></li></ul></nav></div>
+<div class="small-10  medium-5  large-4 small-offset-1 medium-offset-0 xlarge-3 xlarge-offset-1 columns"><h2>Master Investor Magazine</h2><h3>Income Hunting 2015</h3><p class="issue">ISSUE 01 APRIL 2015</p><ul class="links"><li><a href="" class="button large">Click here to subscribe</a></li><li><a href="" class="button large">Click here to contribute</a></li></ul></div>
+<div class="small-10  medium-7 large-5 medium-offset-0 small-offset-1 xlarge-4  columns"><figure><img src="<?php echo get_template_directory_uri(); ?>/images/devices.png" /></figure></div>
+<div class="small-10  small-offset-1 large-3 xlarge-3 large-offset-0 columns end"><nav class="features"><div class="row"><ul><li class="small-12 columns"><h4><a href="">The Naked Trader</a></h4><p>Robbie Burns’ Trading Diary returns</p></li><li class="small-12 columns"><h4><a href="">Zak Mirs' Monthly Pick</a></h4><p>We highlight Apple this month</p></li><li class="small-12 columns"><h4><a href="">The Naked Trader</a></h4><p>Robbie Burns’Trading Diary returns</p></li><li class="small-12 columns"><h4><a href="">The Naked Trader</a></h4><p>Robbie Burns’Trading Diary returns</p></li></ul></div></nav></div>
 </div>
 </section>
 </main>

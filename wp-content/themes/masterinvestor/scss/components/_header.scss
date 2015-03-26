@@ -1,57 +1,77 @@
 header#header{
-	padding:25px 0 45px;
+	padding: 80px 0 25px;
 	background-color: white;
+	text-align: center;
+	border-bottom:1px solid lighten($grey,30%);
 	.columns{
-		height:94px;
+		//height:94px;
+		height:auto;
+		margin-bottom: 20px;
 		&:last-child{
 			float:left;
 		}
 		.inner{
+			position: relative;
 			height:100%;
-			width:auto;
-			display: inline-block;
-			&:before{
-				content:"";
-				height:100%;
+			width:100%;
+		}
+		&.subscribe{
+			text-align: center;
+			height:94px;
+			.inner{
+				width:auto;
 				display: inline-block;
-				vertical-align: bottom;
-			}
-			div{
-				display: inline-block;
-				vertical-align: bottom;
-			}
-			&.full-width{
-				width:100%;
+				&:before{
+					content:"";
+					height:100%;
+					display: inline-block;
+					vertical-align: bottom;
+				}
 				div{
-					width: 98%;
+					display: inline-block;
+					vertical-align: bottom;
+				}
+				&.full-width{
+					width:100%;
+					div{
+						width: 96%;
+					}
 				}
 			}
 		}
 	}
 	#home-link{
-		width: 458px;
-		height: 94px;
-		display: block;
-		background-image: url('../images/master-investor.png');
+		//width: 458px;
+		//height: 94px;
+		width: 80%;
+		max-width: 458px;
+		height:auto;
+		/*background-image: url('../images/master-investor.png');
 		background-repeat: no-repeat;
 		background-position: left top;
-		background-size: 100% auto;
+		background-size: 100% auto;*/
 		display: inline-block;
-		margin:0;
-		@extend %ir;
-		.svg &{
+		margin:0 auto;
+		//@extend %ir;
+		/*.svg &{
 			background-image: url('../images/master-investor.svg');
+		}*/
+		img{
+			width: 100%;
+			height: auto;
 		}
 	}
 	.subscribe-link{
 		display: inline-block;
-		padding: 0 100px 0 0;
+		text-align: left;
+		padding: 0 98px 0 0;
 		@include font-size(30px);
 		color: $dark-grey;
-		height: 100%;
+		height: 94px;
 		line-height: 100%; 
 		font-family: $bebas;
 		position: relative;
+		margin:0 auto;
 		span{
 			color: $blue;
 		}
@@ -64,13 +84,28 @@ header#header{
 			background-image:url('../images/devices.png');
 			background-position: left top;
 			background-repeat: no-repeat;
-			background-size: 100% auto;
+			background-size: auto 100%;
 		}
+	}
+	.social-nav-wrap, .search-wrap{
+		display: block;
+		width:100%;
+		@extend %clearfix;
+		text-align: center;
+		margin-bottom: 20px;
+		float:right;
+	}
+	.search-wrap{
+		margin-bottom: 0;
+	}
+	nav.social{
+		display: inline-block;
+		margin:0 auto;
 	}
 	form{
 		width:100%;
 		display: block;
-		position:relative;
+		position: relative;
 		input{
 			padding-right: 35px;
 			margin-bottom: 0;
@@ -79,84 +114,96 @@ header#header{
 		button{
 			height:35px; 
 			@include abs-pos(1px,1px,auto,auto);
+			font-family: $merriweather;
+			text-transform: uppercase;
+			line-height: 35px;
+			padding:0 10px;
 		}
 	}
 }
-nav.social{
-	@include inline-menu;
-	ul{
-		margin:0;
-		li{
-			margin-right: 10px;
-			a{
-				display: block;
-				width:37px;
-				height:37px;
-				@include border-radius(50%);
-				&:link,&:visited{
-					background-color: $grey;
-					#footer &{
-						background-color: $blue;
-					}	
-				}
-				&:hover,&:active{
-					background-color: $blue;
-					#footer &{
-						background-color: white;
-					}
-				}
-				@extend %ir;
-				background-image:url('../images/facebook-circle.png');
-				#footer &{
-					background-image:url('../images/facebook-circle-grey.png');
-				}
-				.svg &{
-					background-image:url('../images/facebook-circle.svg');
-					#footer &{
-						background-image:url('../images/facebook-circle-grey.svg');
-					}
-				}
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-size: 19px auto;
-				&.twitter{
-					background-image:url('../images/twitter-circle.png');
-					#footer &{
-						background-image:url('../images/twitter-circle-grey.png');
-					}
-					.svg &{
-						background-image:url('../images/twitter-circle.svg');
-						#footer &{
-							background-image:url('../images/twitter-circle-grey.svg');
-						}
-					}	
-					background-size: 23px auto;
-				}
-				&.linkedin{
-					background-image:url('../images/linkedin-circle.png');
-					#footer &{
-						background-image:url('../images/linkedin-circle-grey.png');
-					}
-					.svg &{
-						background-image:url('../images/linkedin-circle.svg');
-						#footer &{
-							background-image:url('../images/linkedin-circle-grey.svg');
-						}
-					}	
-				}
-				&.vimeo{
-					background-image:url('../images/vimeo-circle.png');
-					#footer &{
-						background-image:url('../images/vimeo-circle-grey.png');
-					}
-					.svg &{
-						background-image:url('../images/vimeo-circle.svg');
-						#footer &{
-							background-image:url('../images/vimeo-circle-grey.svg');
-						}
-					}	
-				}
+
+@media #{$large-up} { 
+	header#header{
+		text-align: left;
+		.columns{
+			height:82px;
+			&.subscribe{
+				height: 82px;
+			}
+		}
+		#home-link{
+			width: 400px;
+			height: 82px;
+			margin:0;
+		}
+		.subscribe-link{
+			float: right;
+			margin:0;
+			@include font-size(22px);
+			padding: 0 87px 0 0;
+			&:after{
+				width:77px;
+				height:82px;
+			}
+		}
+		.social-nav-wrap, .search-wrap{
+			width:90%;
+		}
+		.social-nav-wrap{
+			margin:0;
+		}
+		.search-wrap{
+			@include abs-pos(auto,0,0,auto);
+		}
+		form{
+			width:100%;
+		}
+	}
+}
+/*
+@media #{$large-up} { 
+	header#header{
+		text-align: left;
+		.subscribe-link{
+			float: none;
+			margin:0 auto;
+		}
+		.social-nav-wrap{
+			margin:0;
+		}
+		form{
+			
+			display: inline-block;
+			//position: relative;
+		}
+	}
+}
+*/
+@media #{$xlarge-up} { 
+	header#header{
+		padding: 25px 0;
+		text-align: left;
+		#home-link{
+			width: 458px;
+			height: 94px;
+		}
+		.columns{
+			height: 94px;
+			&.subscribe{
+				height: 94px;
+			}
+		}
+		.subscribe-link{
+			float: right;
+			@include font-size(30px);
+			margin:0;
+			padding: 0 104px 0 0;
+			&:after{
+				width:88px;
+				height:94px;
 			}
 		}
 	}
 }
+
+

@@ -1,102 +1,67 @@
 .gform_wrapper{
-	margin:0 auto 40px;
-	#newsletter-signup &{
-		margin:0 auto;
-		width:500px;
-		@media only screen and(max-width: $break-medium){
-			width:80%;
+
+}
+.gform_body{
+	ul{
+		margin-bottom: 0;
+		li{
+			margin-bottom: 10px;
+			@extend %clearfix;
 		}
 	}
-	.gform_body{
-		@extend %clearfix;
+}
+.gfield_label{
+	.gfield_required{ 
+
 	}
-	.gform_footer{
-		text-align: center;
-		margin:20px 0 0;
-		margin:0;
-		position: relative;
+	.left_label &{
+		float:left;
+		width:20%;
+		height:30px;
+		line-height: 30px;
 	}
-	li{
-		margin-bottom: 15px;
-		@extend %clearfix;
+}
+.ginput_container{
+	.left_label &{
+		float: left;
+		width: 80%;
 	}
-	.gfield_label{
-		display:none;
-		.gfield_required{ 
-			color: black;  
-			padding-left:4px;
-		}
-	}
-	input.medium{
-		height:35px;
-		line-height: 1;
-		width:315px;
-		padding: 0 10px;
-		@include font-size(16);
-		@include transition(background-color 0.3s ease-in-out);
-		background-color: darken(white,80);
-		@include placeholder {
-   			color: white;
-   			line-height: 140%;
-   			@include opacity(.5);
-  		}
-  		&:focus{
-   		 	border:none;
-   		 	background-color: darken(white,70);
-   		 	outline:none;
-   		 }
-   		#newsletter-signup &{
-   			width:500px;
-   			height:50px;
-   			margin:0 auto;
-   			line-height: 50px;
-   			background-color: $light-grey;
-   			color: $dark-grey;
-   			@include font-size(20);
-   			line-height:1;
-   			@include placeholder{
-   				color:$dark-grey;
-   				@include opacity(.4);
-   			}
-   		}
-	}
-	.button.gform_button{
-		@include font-size(19);
-		color: black;
-		background-color: white;
-		letter-spacing: 4px;
-		font-family: $brandongrotesque-bold;
-		padding:0 20px;
-		height:35px;
-		line-height: 35px;
+}
+.gform_footer{
+	padding: 0 0 0 20%;
+	display: block;
+	width: 100%;
+	position: relative;
+	input.gform_button{
+		background-color: $blue;
 		border:none;
-		display: inline-block;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		color: white;
+		font-family: $merriweather;
+		@include font-size(14px);
 		text-transform: uppercase;
-		#newsletter-signup &{
-			@include font-size(16);
-			height:50px;
-			line-height: 50px;
-			border: 1px solid $dark-grey;
-		}
-		&:focus{
-			outline:none;
-		}
-	}
-	.validation_error,.validation_message{
-		color: red !important;
-		font-family: $brandongrotesque-medium;
-		@include font-size(16);
-		margin-bottom: 10px;
-	}
-	.validation_message{
-		margin: 3px 0 0;
-	}
-	.gform_ajax_spinner{
-		@include abs-pos(0,0,auto,auto);
+		padding: 0 20px;
 	}
 }
+.gfield_description{
+	display: block;
+	width: 100%;
+	padding-left:20%;
+	text-transform: none;
+}
+.validation_error,.validation_message{
+	@include font-size(12px);
+	color: $blue;
+	margin-bottom: 10px;
+}	
+.validation_error{
+}
+.gform_ajax_spinner{
+	@include abs-pos(0,0,auto,auto);
+}	
 .gform_confirmation_message{
-	margin-bottom: 40px;
-	@include font-size(18);
-	line-height: 140%;
+
 }
+	

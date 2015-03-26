@@ -1,29 +1,56 @@
 nav#nav{
 	background-color: $blue;
-	@include centered-menu;
+	height:50px;
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	display: block;
+	z-index:999;
+	border-bottom:1px solid white;
+	.menu-toggle{
+		@include abs-pos(9px,15px,auto,auto);
+		display: block;
+		width:32px;
+		height: 32px;
+		@extend %ir;
+		@include bg-image('../images/menu');
+	}
+	.columns{
+		padding:0;
+	}
 	ul{
 		margin:0;
+		@include abs-pos(50px,0,auto,0);
+		display: none;
+		padding:0 0 10px;
+		background-color: $blue;
 	}
 	li{
-		padding: 0 20px;
+		padding: 0;
+		
 		a{
 			@include font-size(14px);
 			color: white;
 			@include font-body;
 			font-weight: 700;
 			text-transform: uppercase;
-			height:30px;
-			line-height: 30px;
+			height:45px;
+			line-height: 47px;
 			display: block;
-			margin: 10px 0;
-			padding: 0 0 0 35px;
+			//margin: 10px 0;
+			padding: 0 10px 0 45px;
 			position: relative;
+			background-color: $blue;
+			&:hover,&:active{
+				background-color:darken($blue,10%);
+			}
 			&:before{
 				content:"";
 				width:30px;
-				height:30px;
+				height:45px;
 				display: block;
-				@include abs-pos(0,auto,auto,0);
+				@include abs-pos(0,auto,auto,10px);
 				background-image:url('../images/icon-book.png');
 				.svg &{
 					background-image:url('../images/icon-book.svg');
@@ -91,4 +118,42 @@ nav#nav{
 			}
 		}
 	}
+}
+@media #{$large-up} { 
+
+}
+@media #{$xlarge-up} { 
+	
+nav#nav{
+	@include centered-menu;
+	position:relative;
+	top:auto;
+	left:auto;
+	.columns{
+		padding:0 0.9375rem;
+	}
+	ul{
+		display: block;
+		position: relative;
+		top:auto;
+		right:auto;
+		left:50%;
+		padding:0;
+		li{
+			padding: 0 18px;
+			a{
+				margin: 10px 0;
+				height: 30px;
+				line-height: 30px;
+				padding: 0 0 0 35px;
+				&:before{
+					height:30px;
+					@include abs-pos(0,auto,auto,0);
+				}
+			}
+		}
+	}
+}
+
+
 }

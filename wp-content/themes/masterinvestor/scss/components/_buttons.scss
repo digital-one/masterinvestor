@@ -8,10 +8,20 @@ a.button{
 	&.large{
 		padding: 6px 10px;
 		font-family: $bebas;
-		@include font-size(36px);
+		@include font-size(30px);
 		@include border-radius(5px);
 		display: inline-block;
 		line-height: 100%;
 
+	}
+}
+
+
+@media #{$xlarge-up} { 
+	a.button{
+		&.large{
+			@include font-size(32px);
+			
+		}
 	}
 }

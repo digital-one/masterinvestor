@@ -1,7 +1,7 @@
-$small-range: (0em,40em); /* 0, 640px */
-$medium-range: (40.063em, 64em); /* 641px, 1024px */
-$large-range: (64.063em, 90em); /* 1025px, 1440px */
-$xlarge-range: (90.063em, 120em); /* 1441px, 1920px */
+$small-range: (0em,rem-calc(767)); /* 0, 640px */
+$medium-range: (rem-calc(768), rem-calc(1023)); /* 641px, 1024px */
+$large-range: (rem-calc(1024), rem-calc(1299)); /* 1025px, 1300px */
+$xlarge-range: (rem-calc(1300), 120em); /* 1301px, 1920px */
 $xxlarge-range: (120.063em); /* 1921px */ 
 $total-columns: 12;
 $row-width: rem-calc(1530);

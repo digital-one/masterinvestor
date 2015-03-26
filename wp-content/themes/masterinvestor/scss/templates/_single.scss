@@ -1,0 +1,31 @@
+.single{
+	article.post{
+		padding-right:40px;
+		header{
+			p{
+				@include font-size(12px);
+				@extend %clearfix;
+				font-family: $merriweather;
+				margin-bottom: 30px;
+				span,time{
+					display: inline-block;
+					float:left;
+					line-height: 100%;
+					margin:0;
+				}
+				span.author{
+					text-transform: uppercase;
+					margin-right: 20px;
+				}
+				
+			}
+		}
+		figure{
+			margin-bottom:30px;
+		}
+		footer{
+			margin: $half-spacing 0;
+		}
+	}
+	
+}
