@@ -14,6 +14,7 @@ add_theme_support( 'menus' );
 // Add image sizes
 add_image_size( 'thumbnail', 320, 190, true );
 add_image_size( 'image', 800, 475, true );
+add_image_size( 'profile_image', 100, 100, true );
 
 
 // Change default excerpt

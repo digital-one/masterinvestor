@@ -36,7 +36,7 @@ jQuery('button#select-profile-image').on('click',function(e){
     
                  attachment = custom_uploader.state().get('selection').first().toJSON();
                  if(console) console.log(attachment);
-                 jQuery('.selected-profile-tn').html('<img src="'+attachment.sizes.thumbnail.url+'" />');
+                 jQuery('.selected-profile-tn').html('<img src="'+attachment.sizes.profile_image.url+'" />');
                  jQuery('input[name=user_profile_image]').val(attachment.id);
                  //$('input.pack-file',$uploader).val(attachment.id);
                     //$uploader.addClass('active');

@@ -3920,39 +3920,47 @@ figure img {
   text-transform: uppercase;
   margin-bottom: 30px;
 }
+/* line 102, ../scss/components/_global.scss */
+.author a:link, .author a:visited {
+  color: #231f20;
+}
+/* line 105, ../scss/components/_global.scss */
+.author a:hover, .author a:active {
+  color: #27aae1;
+}
 
-/* line 104, ../scss/components/_global.scss */
+/* line 112, ../scss/components/_global.scss */
 article.post figure {
   margin-bottom: 15px;
 }
-/* line 107, ../scss/components/_global.scss */
+/* line 115, ../scss/components/_global.scss */
 article.post header {
   margin-bottom: 20px;
 }
-/* line 109, ../scss/components/_global.scss */
+/* line 117, ../scss/components/_global.scss */
 article.post header h3 {
   font-size: 24px;
   font-size: 1.5rem;
   line-height: 120%;
   margin-bottom: 15px;
 }
-/* line 119, ../scss/components/_global.scss */
+/* line 127, ../scss/components/_global.scss */
 article.post footer time {
   font-family: "BebasNeueBold_gdi", sans-serif;
   line-height: 100%;
   display: block;
 }
-/* line 125, ../scss/components/_global.scss */
+/* line 133, ../scss/components/_global.scss */
 article.post .category {
   text-transform: uppercase;
 }
 
-/* line 131, ../scss/components/_global.scss */
+/* line 139, ../scss/components/_global.scss */
 header.section-header {
   margin-bottom: 36px;
   position: relative;
 }
-/* line 134, ../scss/components/_global.scss */
+/* line 142, ../scss/components/_global.scss */
 header.section-header .read-more {
   font-family: "BebasNeueBold_gdi", sans-serif;
   font-size: 16px;
@@ -3970,7 +3978,7 @@ header.section-header .read-more {
   -moz-transition: color 0 ease;
   transition: color 0 ease;
 }
-/* line 143, ../scss/components/_global.scss */
+/* line 151, ../scss/components/_global.scss */
 header.section-header .read-more:after {
   content: "";
   width: 16px;
@@ -3987,25 +3995,25 @@ header.section-header .read-more:after {
   position: absolute;
   margin-top: -6px;
 }
-/* line 149, ../scss/components/_global.scss */
+/* line 157, ../scss/components/_global.scss */
 .svg header.section-header .read-more:after {
   background-image: url("../images/slider-next.svg");
 }
-/* line 160, ../scss/components/_global.scss */
+/* line 168, ../scss/components/_global.scss */
 header.section-header .read-more:hover:after, header.section-header .read-more:active:after {
   background-position: right top;
 }
-/* line 167, ../scss/components/_global.scss */
+/* line 175, ../scss/components/_global.scss */
 header.avatar-header {
   padding: 0 0 0 90px;
   min-height: 76px;
   position: relative;
 }
-/* line 170, ../scss/components/_global.scss */
+/* line 178, ../scss/components/_global.scss */
 header.avatar-header.fixed-height {
   height: 76px;
 }
-/* line 174, ../scss/components/_global.scss */
+/* line 182, ../scss/components/_global.scss */
 header.avatar-header .avatar {
   width: 76px;
   height: 76px;
@@ -4025,20 +4033,20 @@ header.avatar-header .avatar {
   overflow: hidden;
 }
 
-/* line 185, ../scss/components/_global.scss */
+/* line 193, ../scss/components/_global.scss */
 .latest-edition {
   margin-top: 36px;
   background-color: #f1f1f2;
   border: 1px solid #939598;
   margin: 0 0 36px;
 }
-/* line 190, ../scss/components/_global.scss */
+/* line 198, ../scss/components/_global.scss */
 .latest-edition header {
   background-color: #231f20;
   color: white;
   padding: 10px;
 }
-/* line 194, ../scss/components/_global.scss */
+/* line 202, ../scss/components/_global.scss */
 .latest-edition header h3 {
   font-family: "BebasNeueBold_gdi", sans-serif;
   color: white;
@@ -4047,19 +4055,19 @@ header.avatar-header .avatar {
   text-align: center;
   margin: 0;
 }
-/* line 202, ../scss/components/_global.scss */
+/* line 210, ../scss/components/_global.scss */
 .latest-edition main {
   padding: 15px;
   display: block;
   text-align: right;
   position: relative;
 }
-/* line 207, ../scss/components/_global.scss */
+/* line 215, ../scss/components/_global.scss */
 .latest-edition main img {
   width: 70%;
   height: auto;
 }
-/* line 211, ../scss/components/_global.scss */
+/* line 219, ../scss/components/_global.scss */
 .latest-edition main .flash {
   width: 177px;
   height: 177px;
@@ -4077,7 +4085,7 @@ header.avatar-header .avatar {
   text-align: left;
 }
 
-/* line 223, ../scss/components/_global.scss */
+/* line 231, ../scss/components/_global.scss */
 .breadcrumbs {
   font-size: 12px;
   font-size: 0.75rem;
@@ -4086,7 +4094,7 @@ header.avatar-header .avatar {
   margin-bottom: 36px;
 }
 
-/* line 229, ../scss/components/_global.scss */
+/* line 237, ../scss/components/_global.scss */
 p.author {
   margin-bottom: 0;
 }
@@ -4798,7 +4806,15 @@ nav.social ul li a.vimeo {
 #slider .slide p.author {
   margin-bottom: 20px;
 }
-/* line 33, ../scss/templates/_home.scss */
+/* line 32, ../scss/templates/_home.scss */
+#slider .slide p.author a:link, #slider .slide p.author a:visited {
+  color: #231f20;
+}
+/* line 35, ../scss/templates/_home.scss */
+#slider .slide p.author a:hover, #slider .slide p.author a:active {
+  color: #27aae1;
+}
+/* line 41, ../scss/templates/_home.scss */
 #slider .page-count {
   font-family: "BebasNeueBold_gdi", sans-serif;
   font-size: 14px;
@@ -4813,25 +4829,26 @@ nav.social ul li a.vimeo {
   width: 50px;
   text-align: center;
   display: block;
+  z-index: 9999;
 }
 
-/* line 44, ../scss/templates/_home.scss */
+/* line 53, ../scss/templates/_home.scss */
 #twitter-feed {
   padding: 36px 0 36px;
   border-bottom: 1px solid #c7c8ca;
   margin-bottom: 36px;
 }
-/* line 48, ../scss/templates/_home.scss */
+/* line 57, ../scss/templates/_home.scss */
 #twitter-feed p {
   margin-bottom: 0;
   font-family: "Merriweather", serif;
 }
-/* line 52, ../scss/templates/_home.scss */
+/* line 61, ../scss/templates/_home.scss */
 #twitter-feed .slider {
   padding: 0 70px;
   position: relative;
 }
-/* line 55, ../scss/templates/_home.scss */
+/* line 64, ../scss/templates/_home.scss */
 #twitter-feed .slider:before {
   content: "";
   width: 38px;
@@ -4850,13 +4867,13 @@ nav.social ul li a.vimeo {
 .svg #twitter-feed .slider:before {
   background-image: url("../images/twitter.svg");
 }
-/* line 62, ../scss/templates/_home.scss */
+/* line 71, ../scss/templates/_home.scss */
 #twitter-feed .slider .slide {
   width: 100%;
   height: 40px;
   background-color: white;
 }
-/* line 66, ../scss/templates/_home.scss */
+/* line 75, ../scss/templates/_home.scss */
 #twitter-feed .slider .slide:before {
   content: "";
   height: 40px;
@@ -4864,7 +4881,7 @@ nav.social ul li a.vimeo {
   vertical-align: middle;
   text-align: center;
 }
-/* line 73, ../scss/templates/_home.scss */
+/* line 82, ../scss/templates/_home.scss */
 #twitter-feed .slider .slide .vcenter {
   display: inline-block;
   width: 98%;
@@ -4872,7 +4889,7 @@ nav.social ul li a.vimeo {
   text-align: left;
   vertical-align: middle;
 }
-/* line 81, ../scss/templates/_home.scss */
+/* line 90, ../scss/templates/_home.scss */
 #twitter-feed .slider .slick-next, #twitter-feed .slider .slick-prev {
   top: 50%;
   right: 55px;
@@ -4881,22 +4898,22 @@ nav.social ul li a.vimeo {
   position: absolute;
   margin-top: -6px;
 }
-/* line 85, ../scss/templates/_home.scss */
+/* line 94, ../scss/templates/_home.scss */
 #twitter-feed .slider .slick-next {
   right: 30px;
 }
 
-/* line 91, ../scss/templates/_home.scss */
+/* line 100, ../scss/templates/_home.scss */
 #must-reads .columns:last-child {
   display: none;
 }
 
-/* line 95, ../scss/templates/_home.scss */
+/* line 104, ../scss/templates/_home.scss */
 .latest-articles article {
   margin-bottom: 40px;
 }
 
-/* line 99, ../scss/templates/_home.scss */
+/* line 108, ../scss/templates/_home.scss */
 #latest-edition h2 {
   max-width: 300px;
   width: 100%;
@@ -4910,7 +4927,7 @@ nav.social ul li a.vimeo {
 .svg #latest-edition h2 {
   background-image: url("../images/mi-slug.svg");
 }
-/* line 106, ../scss/templates/_home.scss */
+/* line 115, ../scss/templates/_home.scss */
 #latest-edition h3 {
   font-family: "BebasNeueBold_gdi", sans-serif;
   font-size: 70px;
@@ -4918,7 +4935,7 @@ nav.social ul li a.vimeo {
   line-height: 80%;
   margin-bottom: 10px;
 }
-/* line 112, ../scss/templates/_home.scss */
+/* line 121, ../scss/templates/_home.scss */
 #latest-edition p.issue {
   font-family: "Merriweather", serif;
   text-transform: uppercase;
@@ -4927,42 +4944,42 @@ nav.social ul li a.vimeo {
   color: #27aae1;
   margin-bottom: 30px;
 }
-/* line 119, ../scss/templates/_home.scss */
+/* line 128, ../scss/templates/_home.scss */
 #latest-edition figure {
   width: 100%;
   margin: 0 auto;
 }
-/* line 122, ../scss/templates/_home.scss */
+/* line 131, ../scss/templates/_home.scss */
 #latest-edition figure img {
   width: 100%;
   height: auto;
 }
-/* line 128, ../scss/templates/_home.scss */
+/* line 137, ../scss/templates/_home.scss */
 #latest-edition .links li {
   margin-bottom: 15px;
 }
-/* line 132, ../scss/templates/_home.scss */
+/* line 141, ../scss/templates/_home.scss */
 #latest-edition nav.features {
   margin: 36px 0 0;
 }
-/* line 136, ../scss/templates/_home.scss */
+/* line 145, ../scss/templates/_home.scss */
 #latest-edition nav.features li:last-child p {
   margin-bottom: 0;
   padding-bottom: 0;
   border: none;
 }
-/* line 143, ../scss/templates/_home.scss */
+/* line 152, ../scss/templates/_home.scss */
 #latest-edition nav.features h4 {
   font-family: "BebasNeueBold_gdi", sans-serif;
   font-size: 36px;
   font-size: 2.25rem;
   margin-bottom: 10px;
 }
-/* line 147, ../scss/templates/_home.scss */
+/* line 156, ../scss/templates/_home.scss */
 #latest-edition nav.features h4 a {
   color: #231f20;
 }
-/* line 151, ../scss/templates/_home.scss */
+/* line 160, ../scss/templates/_home.scss */
 #latest-edition nav.features p {
   font-family: "Merriweather", serif;
   font-size: 18px;
@@ -4974,49 +4991,49 @@ nav.social ul li a.vimeo {
   padding-bottom: 20px;
 }
 
-/* line 162, ../scss/templates/_home.scss */
+/* line 171, ../scss/templates/_home.scss */
 .section-wrap {
   margin-bottom: 80px;
 }
 
 /* Large */
 @media only screen and (min-width: 64rem) {
-  /* line 179, ../scss/templates/_home.scss */
+  /* line 188, ../scss/templates/_home.scss */
   #slider .slide {
     padding-bottom: 0px;
   }
-  /* line 182, ../scss/templates/_home.scss */
+  /* line 191, ../scss/templates/_home.scss */
   #slider .slide figure:before {
     padding-top: 66.66%;
   }
 
-  /* line 189, ../scss/templates/_home.scss */
+  /* line 198, ../scss/templates/_home.scss */
   #must-reads .columns:last-child {
     display: block;
   }
 
-  /* line 194, ../scss/templates/_home.scss */
+  /* line 203, ../scss/templates/_home.scss */
   #latest-edition h3 {
     font-size: 90px;
     font-size: 5.625rem;
     line-height: 80%;
   }
-  /* line 198, ../scss/templates/_home.scss */
+  /* line 207, ../scss/templates/_home.scss */
   #latest-edition nav.features {
     margin: 0;
   }
-  /* line 201, ../scss/templates/_home.scss */
+  /* line 210, ../scss/templates/_home.scss */
   #latest-edition figure {
     width: 100%;
   }
 
-  /* line 205, ../scss/templates/_home.scss */
+  /* line 214, ../scss/templates/_home.scss */
   .latest-articles article {
     margin-bottom: 0;
   }
 }
 @media only screen and (min-width: 81.25rem) {
-  /* line 212, ../scss/templates/_home.scss */
+  /* line 221, ../scss/templates/_home.scss */
   #slider {
     margin-bottom: 0;
   }

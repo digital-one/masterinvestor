@@ -9,7 +9,7 @@ endif;
 ?>
 <div class="medium-3 columns"><figure><a href="<?php the_permalink() ?>"><img src="<?php echo $src ?>" /></a></figure></div>
 <div class="medium-9 columns"><header><h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title() ?></a></h2>
-	<p><span class="author">By <?php the_author_link( get_the_author_meta( 'ID' )) ?></span></p>
+	<p><span class="author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>"><?php the_author_link( get_the_author_meta( 'ID' )) ?></a></span></p>
 </header>
 <?php the_excerpt(); ?>
 <footer><time datetime="<?php the_time('Y-m-j') ?>"><?php the_time(__( 'F j, Y, H:i A e' )) ?></time></footer>

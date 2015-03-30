@@ -13,7 +13,7 @@ endif;
 <h2 class="sub-head">Feature</h2>
 </header>
 <h3><a href="<?php the_permalink() ?>" title="<?php the_title() ?>"><?php the_title() ?></a></h3>
-<p class="author">By <?php the_author_link( get_the_author_meta( 'ID' )) ?></p>
+<p class="author">By <a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>"><?php the_author_link( get_the_author_meta( 'ID' )) ?></a></p>
 <?php the_excerpt() ?>
 </div>
 <div class="small-12  large-6 xlarge-8 columns"><figure><a href="<?php the_permalink() ?>" class="image-wrap" style="background-image:url('<?php echo $src ?>');"></a></figure></div>
