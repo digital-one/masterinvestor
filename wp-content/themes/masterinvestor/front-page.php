@@ -7,47 +7,46 @@
 <div class="small-12 xlarge-9 columns">
   <!--slider-->
   <div id="slider" class="slick-slider">
-
-  <!--slide-->
-<div class="slide">
-  <div class="row">
-    <div class="small-12 large-6 xlarge-4 columns">
-    	<header class="section-header">
-<h2 class="sub-head">Feature</h2>
-</header>
-<h3><a href="">North Sea Oil Gold Rush</a></h3>
-<p class="author">By Jim Mellon</p>
-<p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
-</div>
-<div class="small-12  large-6 xlarge-8 columns"><figure><a href="" class="image-wrap" style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/north-sea.jpg');"></a></figure></div>
-</div>
-</div>
-<!--/slide-->
-
- <!--slide-->
-<div class="slide">
-  <div class="row">
-    <div class="small-12 large-6 xlarge-4 columns">
-    	<header class="section-header">
-<h2 class="sub-head">Feature</h2>
-</header>
-<h3>North Sea Oil Gold Rush 2</h3>
-<p class="author">By Jim Mellon</p>
-<p>The answer I gave to these knowledge-hungry folks was that trading is not like most other business. There are no “standard operating procedures” on how to trade or what’s the best setup to use. There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p>
-</div>
-<div class="small-12  large-6 xlarge-8 columns"><figure style="background-image:url('<?php echo get_template_directory_uri(); ?>/images/north-sea.jpg';);">image</figure></div>
-</div>
-</div>
-<!--/slide-->
+<?php
+	$args=array(
+		'post_type' => 'post',
+		'post_status' => 'publish',
+		'posts_per_page' => -1,
+		'meta_key' => 'featured_post',
+    	'meta_value' => 1,
+    	'meta_compare' => '=',
+    	'orderby' => 'date',
+		'order' => 'DESC'
+	);
+	query_posts($args);
+	
+	//if($articles = get_posts($args)):
+		if(have_posts()) :
+			while (have_posts() ) : the_post(); 
+			get_template_part('partials/content','slide-loop' );
+			endwhile;
+			endif;
+			?>
 
 </div>
-
-
 </div>
 <!--/slider-->
 
-<aside class="large-3 columns show-for-xlarge-up">
-ads
+<aside class="small-12 xlarge-3 columns">
+	<div class="row">
+		<div class="small-12 medium-6 xlarge-12 columns">
+	<div class="iframe-wrap">
+<iframe src="http://markets.fortune.com/application/markets/homepage" frameborder="0" scrolling="no" class="fortune-fullwidth"></iframe>
+</div>
+</div>
+<!--ad-->
+<div class="small-12 medium-6 xlarge-12 columns height-75-pct">
+<div class="ad">
+	<div class="content"><div class="inner"><span>Advertisement</span></div></div>
+</div>
+</div>
+<!--/ad-->
+</div>
 </aside>
 </div>
 </section>
@@ -83,7 +82,7 @@ ads
 
 <div class="row">
 <section id="must-reads" class="latest-articles small-12 xlarge-9 columns">
-<header class="section-header"><h2 class="sub-head invert">Must reads</h2><a href="<?php echo get_term_link( 'must-reads', 'category' ) ?>" class="read-more" title="Read more">Read more</a></header>
+<header class="section-header"><h2 class="sub-head invert">Latest</h2><a href="<?php echo get_term_link( 'latest', 'category' ) ?>" class="read-more" title="Read more">Read more</a></header>
 <div class="row">
 
 <?php
@@ -95,7 +94,7 @@ ads
             array(
             	'taxonomy' =>'category',
             	'field' => 'slug',
-            	'terms' =>  'must-reads'
+            	'terms' =>  'latest'
             	)
             ),
 		'orderby' => 'date',
@@ -141,7 +140,7 @@ ads
 
 <section id="evil-diaries" class="latest-articles evil-diaries large-12 columns tint">
 
-<header class="section-header avatar-header fixed-height"><a href="<?php echo get_term_link( 'evil-diaries', 'category' ) ?>" class="avatar">Evil Knievel</a><div class="vertical-center"><div class="vcenter"><h2 class="sub-head invert">Evil Diaries</h2></div></div><a href="<?php echo get_term_link( 'evil-diaries', 'category' ) ?>" class="read-more" title="Read more">Read more</a></header>
+<header class="section-header avatar-header fixed-height"><a href="<?php echo get_term_link( 'evil-diaries', 'category' ) ?>" class="avatar"><img src="<?php echo get_template_directory_uri(); ?>/images/evil-knievel.jpg" alt="Evil Knievel" /></a><div class="vertical-center"><div class="vcenter"><h2 class="sub-head invert">Evil Diaries</h2></div></div><a href="<?php echo get_term_link( 'evil-diaries', 'category' ) ?>" class="read-more" title="Read more">Read more</a></header>
 <div class="row">
 	<?php
 	$args=array(
@@ -225,7 +224,7 @@ ads
             array(
             	'taxonomy' =>'category',
             	'field' => 'slug',
-            	'terms' =>  'currencies'
+            	'terms' =>  'trading'
             	)
             ),
 		'orderby' => 'date',
@@ -239,7 +238,7 @@ ads
 <!-- currencies -->
 <div class="row">
 <section id="currencies" class="latest-articles currencies large-12 columns">
-<header class="section-header"><h2 class="sub-head invert">Currencies</h2><a href="<?php echo get_term_link( 'currencies', 'category' ) ?>" class="read-more" title="Read more">Read more</a></header>
+<header class="section-header"><h2 class="sub-head invert">Trading</h2><a href="<?php echo get_term_link( 'trading', 'category' ) ?>" class="read-more" title="Read more">Read more</a></header>
 <div class="row">
 <?php
 			while (have_posts() ) : the_post(); 
@@ -275,7 +274,7 @@ ads
 <!-- economics -->
 <div class="row">
 <section id="economics" class="latest-articles economics large-12 columns">
-<header class="section-header"><h2 class="sub-head invert">Economics</h2><a href="<?php echo get_term_link( 'economics', 'category' ) ?>" class="read-more" title="Read more">Read more</a></header>
+<header class="section-header"><h2 class="sub-head invert">Economics &amp; Markets</h2><a href="<?php echo get_term_link( 'economics', 'category' ) ?>" class="read-more" title="Read more">Read more</a></header>
 <div class="row">
 <?php
 			while (have_posts() ) : the_post(); 
@@ -289,45 +288,38 @@ ads
 <div class="division"></div>
 <?php endif; ?>
 			<?php wp_reset_query(); ?>
-
-				<?php
-	$args=array(
-		'post_type' => 'post',
-		'post_status' => 'publish',
-		'posts_per_page' => 3,
-		'tax_query' => array(
-            array(
-            	'taxonomy' =>'category',
-            	'field' => 'slug',
-            	'terms' =>  'other'
-            	)
-            ),
-		'orderby' => 'date',
-		'order' => 'DESC'
-		);
-	query_posts($args);
-
-		if(have_posts()) :
-			?>
-<!-- others -->
-<div class="row">
-<section id="others" class="latest-articles others large-12 columns">
-<header class="section-header"><h2 class="sub-head invert">Others</h2><a href="<?php echo get_term_link( 'other', 'category' ) ?>" class="read-more" title="Read more">Read more</a></header>
-<div class="row">
-<?php
-			while (have_posts() ) : the_post(); 
-			get_template_part('partials/content','article-loop' );
-			endwhile;
-			?>
-</div>
-</section>
-</div>
-<!-- /others -->
-<?php endif; ?>
-			<?php wp_reset_query(); ?>
 </div>
 <aside class="small-12 large-3 columns">
-ads column
+	<div class="row">
+<!--ad-->
+<div class="small-12 columns height-200-pct">
+<div class="ad">
+	<div class="content"><div class="inner"><span>Advertisement</span></div></div>
+</div>
+</div>
+<!--/ad-->
+<!--ad-->
+<div class="small-12  columns height-75-pct">
+<div class="ad">
+	<div class="content"><div class="inner"><span>Advertisement</span></div></div>
+</div>
+</div>
+<!--/ad-->
+<!--ad-->
+<div class="small-12 columns height-75-pct">
+<div class="ad">
+	<div class="content"><div class="inner"><span>Advertisement</span></div></div>
+</div>
+</div>
+<!--/ad-->
+<!--ad-->
+<div class="small-12 columns height-200-pct">
+<div class="ad">
+	<div class="content"><div class="inner"><span>Advertisement</span></div></div>
+</div>
+</div>
+<!--/ad-->
+</div>
 	</aside>
 
 </div>

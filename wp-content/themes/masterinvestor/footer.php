@@ -1,35 +1,31 @@
 <footer id="footer">
 <div class="row">
-	<a href="#" class="anchor-up">Up</a>
+	<a class="anchor-up">Up</a>
 <div class="small-12 large-4 columns">
 	<section id="most-popular">
 	<div class="column-inner">
 <h4>Most Popular</h4>
 <div class="row">
-<article class="small-6 medium-3 large-6 columns">
-	<a href="#">
-<figure class="ratio-16-9"></figure>
-<h5>How BuzzFeed is Taking Over the World</h5>
-</a>
-</article>
-<article class="small-6 medium-3 large-6 columns">
-	<a href="#">
-<figure class="ratio-16-9"></figure>
-<h5>How BuzzFeed is Taking Over the World</h5>
-</a>
-</article>
-<article class="small-6 medium-3 large-6 columns">
-	<a href="#">
-<figure class="ratio-16-9"></figure>
-<h5>How BuzzFeed is Taking Over the World</h5>
-</a>
-</article>
-<article class="small-6 medium-3 large-6 columns">
-	<a href="#">
-<figure class="ratio-16-9"></figure>
-<h5>How BuzzFeed is Taking Over the World</h5>
-</a>
-</article>
+	<?php
+	$args=array(
+		'post_type' => 'post',
+		'post_status' => 'publish',
+		'posts_per_page' => 4,
+		'meta_key' => 'popular_post',
+    	'meta_value' => 1,
+    	'meta_compare' => '=',
+    	'orderby' => 'date',
+		'order' => 'DESC'
+	);
+	query_posts($args);
+	
+	//if($articles = get_posts($args)):
+		if(have_posts()) :
+			while (have_posts() ) : the_post(); 
+			get_template_part('partials/content','popular-article-loop' );
+			endwhile;
+			endif;
+			?>
 	</div>
 </div>
 </section>

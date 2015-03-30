@@ -1,4 +1,4 @@
-.archive{
+.archive,.search{
 	article.post{
 		h2{
 			@include font-size(22px);
@@ -6,6 +6,44 @@
 		}
 		figure{
 			margin:0 0 20px;
+		}
+	}
+	.posts-footer{
+		display: block;
+		width:100%;
+		position: relative;
+		text-align: center;
+		.load-posts{
+			@include font-size(18px);
+			font-family:$bebas;
+			display: none;
+			height:32px;
+			line-height: 32px;
+			padding: 0 40px 0 0;
+			margin:0 auto;
+			width: auto;
+			color: $dark-grey;
+			position: relative;
+			&.loading{
+				display: inline-block;
+				&:after{
+					content:"";
+					width:24px;
+					height:24px;
+					display: block;
+					@include abs-pos(3px,0,auto,auto);
+					background-image:url('../images/spin.gif');
+					.svg &{
+						background-image:url('../images/spin.svg');
+					}
+					background-position:center center;
+					background-repeat: no-repeat;
+					background-size:100% auto;
+				}
+			}
+			&.end{
+				display: none;
+			}
 		}
 	}
 }

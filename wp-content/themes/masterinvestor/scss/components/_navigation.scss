@@ -134,22 +134,36 @@ nav#nav{
 @media #{$xlarge-up} { 
 	
 nav#nav{
-	@include centered-menu;
+	//@include centered-menu;
 	position:relative;
 	top:auto;
 	left:auto;
+	padding:0 15px;
+	.fixed &{
+		position:fixed;
+		top:0;
+		left:0;
+	}
 	.columns{
 		padding:0 0.9375rem;
+	}
+	.menu-toggle{
+		display: none;
 	}
 	ul{
 		display: block;
 		position: relative;
 		top:auto;
 		right:auto;
-		left:50%;
+		//left:50%;
 		padding:0;
 		li{
-			padding: 0 18px;
+			padding: 0 55px 0 0;
+			float:left;
+			display: inline-block;
+			&:last-child{
+				padding-right:0;
+			}
 			a{
 				margin: 10px 0;
 				height: 30px;

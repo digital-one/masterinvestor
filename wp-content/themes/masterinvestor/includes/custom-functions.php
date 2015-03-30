@@ -31,6 +31,16 @@ function scripts_and_styles() {
 		wp_register_script( 'twitter_fetcher', get_stylesheet_directory_uri() . '/js/twitter-fetcher.js', array(), null, false );
   		wp_enqueue_script( 'twitter_fetcher' );
 
+  		//easing
+  		wp_register_script( 'easing', get_stylesheet_directory_uri() . '/js/jquery.easing.min.js', array(), null, false );
+  		wp_enqueue_script( 'easing' );
+
+
+  		//scroll to
+		wp_register_script( 'scrollto', get_stylesheet_directory_uri() . '/js/jquery.scrollTo.min.js', array(), null, false );
+  		wp_enqueue_script( 'scrollto' );
+
+
 		// register main stylesheet
 		wp_register_style( 'stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
 		wp_enqueue_style( 'stylesheet' );

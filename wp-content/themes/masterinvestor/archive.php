@@ -13,6 +13,59 @@
 <?php elseif (is_year()): ?>
 	<h1><?php the_time('Y'); ?></h1>
 <?php endif ?>
+<div class="posts">
+	<?php
+	$paged = (get_query_var('page')) ? get_query_var('page') : 1;
+	
+	//$paged = max( 1, get_query_var('paged'));
+	$args = array(
+             'paged' => $paged,
+             'post_status' => 'publish',
+             'posts_per_page' => 10,
+             'post_type' => 'post',
+             'orderby'=>'date',
+             'order'=>'DESC'
+     );
+
+	if(is_category()):
+		$term_id = get_query_var('cat');
+		$paging_permalink = get_category_link( $term_id );
+
+		$args = array(
+		'paged' => $paged,
+        'posts_per_page' => 10,
+        'post_status' => 'publish',
+        'post_type' => 'post',
+        'orderby'=>'date',
+        'order'=>'DESC',
+		'tax_query' => array(
+            array(
+            	'taxonomy' =>'category',
+            	'field' => 'id',
+            	'terms' =>  $term_id
+            	)
+            )
+		);
+	
+		endif;
+
+	if(is_tag()):
+		$tag       = get_queried_object();
+    $tag_slug  = $tag->slug;
+	$paging_permalink = get_tag_link( $tag_id );
+	$args = array(
+		'paged' => $paged,
+        'posts_per_page' => 10,
+        'post_status' => 'publish',
+        'post_type' => 'post',
+        'tag' => $tag_slug,
+        'orderby'=>'date',
+        'order'=>'DESC',
+		);
+	endif;
+
+	query_posts($args);
+                ?>
 		<?php if (have_posts()) :
 					$count=1;
 					$num_posts = count($posts);
@@ -51,83 +104,15 @@ endif;
 </div>
 	</article>
 <?php endif ?>
-
-
-<footer></footer>
 </div>
-<aside class="small-12 large-3 columns">
-	<nav class="social"><div><span>FOLLOW US</span><ul><li><a href="" class="twitter">Twitter</a></li><li><a href="">Facebook</a></li><li><a href="" class="linkedin">Linkedin</a></li><li><a href="" class="vimeo">Vimeo</a></li></ul></div></nav>
-	
-<section class="latest-edition show-for-large-up">
-	<a href="">
-<header><h3>View the Latest Edition out now!</h3></header>
-<main><div class="flash">Available to view on all mobile devices</div><img src="<?php echo get_template_directory_uri(); ?>/images/devices.png" /></main>
-</a>
-</section>
-
-<section class="archive-menu tint">
-	<div class="medium-12 columns">
-<nav class="equities">
-<header><h4>Equities</h4></header>
-<div class="row">
-<ul>
-	<li class="small-12 medium-3 large-12 columns">
-		<div class="row">
-		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
-		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
-	</li>
-	<li class="small-12 medium-3 large-12 columns">
-		<div class="row">
-		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
-		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
-	</li>
-	<li class="small-12 medium-3 large-12 columns">
-		<div class="row">
-		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
-		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
-	</li>
-	<li class="small-12 medium-3 large-12 columns">
-		<div class="row">
-		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
-		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
-	</li>
-</ul>
+<?php
+global $wp_query;
+$num_pages = $wp_query->max_num_pages;
+$next_page = $paged+1;
+?>
+<footer class="posts-footer"><a href="<?php echo $paging_permalink?>?page=<?php echo $next_page ?>" class="load-posts<?php if($next_page > $num_pages): ?> end<?php endif ?>">Loading</a></footer>
 </div>
-<footer><a href="">More Equities</a></footer>
-</nav>
-<nav class="evil-diaries">
-<header><h4>The Evil Diaries</h4></header>
-<div class="row">
-<ul>
-	<li class="small-12 medium-3 large-12 columns">
-		<div class="row">
-		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
-		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
-	</li>
-
-	<li class="small-12 medium-3 large-12 columns">
-		<div class="row">
-		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
-		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
-	</li>
-	<li class="small-12 medium-3 large-12 columns">
-		<div class="row">
-		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
-		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
-	</li>
-	<li class="small-12 medium-3 large-12 columns">
-		<div class="row">
-		<div class="small-4 medium-12 large-4 columns hide-for-large-only"><figure class="ratio-16-9"><a href="">image</a></figure></div>
-		<div class="small-8 medium-12 xlarge-8 columns"><h5><a href="">Dealing with a social media storm</a></h5><p>There is no definitive answer as to whether two or four screens are needed or that a laptop or a tablet is all you need to have.</p></div></div>
-	</li>
-</ul>
-</div>
-<footer><a href="">More Equities</a></footer>
-</nav>
-</div>
-</section>
-
-</aside>
+<?php get_sidebar() ?>
 </div>
 </main>
 <?php get_footer() ?> 

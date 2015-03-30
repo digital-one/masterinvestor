@@ -5,6 +5,7 @@ h1,h2,h3,h4,h5{
 	font-weight:700;
 	line-height:100%;
 	margin: 0 0 30px;
+	text-transform: capitalize;
 	a{
 		&:link,&:visited{
 			color: $dark-grey;

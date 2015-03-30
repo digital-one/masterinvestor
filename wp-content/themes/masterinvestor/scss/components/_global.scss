@@ -65,7 +65,7 @@
 figure{
 	display:block;
 	width:100%;
-	background-color: $grey;
+	background-color: transparent;
 	position: relative;
 	margin-bottom: 15px;
 	.image-wrap{
@@ -174,11 +174,11 @@ header{
 		.avatar{
 			width:76px;
 			height:76px;
-			@extend %ir;
 			display: block;
 			@include border-radius(50%);
 			background-color:$grey;
 			@include abs-pos(0,auto,auto,0);
+			overflow:hidden;
 		}
 	}
 }
@@ -211,11 +211,12 @@ header{
 		.flash{
 			width:177px;
 			height:177px;
-			display: inline-block;
+			display: block;
 			@include bg-image('../images/device-flash',false);
-			z-index: 999;
+			z-index: 996;
 			@include abs-pos(15px,auto,auto,15px);
 			@extend %ir;
+			text-align: left;
 		}
 	}
 }
@@ -224,4 +225,7 @@ header{
 	font-family: $merriweather;
 	text-transform:uppercase;
 	margin-bottom: $half-spacing;
+}
+p.author{
+	margin-bottom: 0;
 }

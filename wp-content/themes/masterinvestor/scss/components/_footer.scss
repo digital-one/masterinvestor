@@ -32,6 +32,9 @@
 		&:link,&:visited{
 			color: white;
 		}
+		&:hover,&:active{
+			color: $blue;
+		}
 	}
 	.column-inner{
 		padding-right:0;
@@ -59,8 +62,9 @@
 		background-repeat:no-repeat;
 		background-size:25px auto;
 		@include abs-pos(auto,0,-80px,auto);
+		background-color: darken(white,50%); 
 		&:link,&:visited{
-			background-color: $grey;
+			background-color: darken(white,50%); 
 		}
 		&:hover,&:active{
 			background-color: white;

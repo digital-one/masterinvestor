@@ -116,41 +116,104 @@ var mi_feed = {
 }
 
 
-/*
+if(!isTouchDevice.any()){
 
-if($('#carousel').length){
-$('#carousel').slick({
-  		dots: false,
-  		arrows: true,
-  		infinite: true,
-  		autoplay: true,
-  		 autoplaySpeed: 4000,
-  		speed: 600,
-  		slidesToShow: 3,
-  		slidesToScroll: 1,
-  		responsive: [
-    	{
-      		breakpoint: 767,
-      		settings: {
-        	slidesToShow: 2,
-        	slidesToScroll: 1,
-        	infinite: true,
-        	dots: false
-      	}
-    },
-    	
-    	{
-      	breakpoint: 379,
-      	settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    	}
- 	 ]
-	});
+  //var stickyHeaderTop= $('#breadcrumb').offset().top ;
+  if($('#nav').length){
+  var _stickyHeaderTop = $('#nav').offset().top;
+//var animating = false;
+    $(window).scroll(function(){
+      var _scrollTop = $(window).scrollTop();
+    if( _scrollTop > _stickyHeaderTop ) {
+      //alert('top')
+      $('body').addClass('fixed');
+      
+                } else {
+            $('body').removeClass('fixed');       
+                }
+       
+  })
 }
 
-*/
+}
+
+
+load_posts = function(){
+if($('.posts').length){
+var _windowMiddle = $(window).height()/2,
+	_windowHeight = $(window).height(),
+	_offset = $('.posts').offset(),
+	_postsHeight = $('.posts').height(),
+	_scrollTop = $(window).scrollTop(),
+	_postsBottom = _offset.top + _postsHeight,
+	_scrollAmount  = _postsBottom - _windowMiddle,
+	_footerHeight = $('.posts-footer').outerHeight(),
+	_waypoint = (_postsHeight - _windowHeight) + 400;
+if(_scrollTop > _waypoint && _scrollDirection=='down'){
+	$('a.load-posts').trigger('click');
+}
+}
+}
+
+load_posts_click = function(e){
+
+	e.preventDefault();
+	var _this = e.currentTarget,
+		_url = $(_this).attr('href'),
+		_loadElement =  '.posts',
+		_btnElement = 'a.load-posts';
+
+		if(!$(_btnElement).hasClass('end')){
+	$(_this).data("label",$(_this).text());
+	$(window).off('scroll',load_posts); //stop the scroll action
+	$('a.load-posts').off('click', load_posts_click); //stop the click action
+	$(_this).addClass('loading');
+
+	$.get(_url).done(function(data){
+	$('a.load-posts').on('click', load_posts_click);	
+	$(window).on('scroll',load_posts);
+	$('a.load-posts').removeClass('loading');
+	var _obj = $(data).find(_loadElement),
+	 	_btn = $(data).find(_btnElement);
+	 	_items = _obj.children();
+	$(_this).attr('href',_btn.attr('href')); //update the paging link
+	$(_this).attr('class',_btn.attr('class'));
+	$(_loadElement).append(_items);
+	//_container.append(_items).masonry('appended',_items);
+	});
+	}
+}
+
+$('a.load-posts').on('click',load_posts_click);
+$(window).on('scroll',load_posts);
+//$(window).on('scroll',sticky_nav);
+
+$('.anchor-up').on('click',function(e){
+
+	e.preventDefault();
+	var _animationSpeed = 500,
+		_target = $(this).attr('href');
+		_target = '0';
+	 $.scrollTo( _target, _animationSpeed, {
+          easing: 'easeInOutExpo',
+          offset: 0
+        });
+})
+  
+ 
+       
+
+
+
+$(window).on( 'DOMMouseScroll mousewheel', function ( event ) {
+  if( event.originalEvent.detail > 0 || event.originalEvent.wheelDelta < 0 ) { 
+    //scroll down
+    _scrollDirection = 'down';
+  } else {
+    //scroll up
+   	_scrollDirection = 'up';
+  }
+});
 
 
 });

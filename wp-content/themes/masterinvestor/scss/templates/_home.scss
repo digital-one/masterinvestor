@@ -3,6 +3,7 @@
 	padding: $spacing 0 $spacing;
 }
 #slider{
+	margin-bottom: $spacing;
 	h3{
 		@include font-size(34px);
 		font-weight: 700;
@@ -16,6 +17,7 @@
 	}
 	.slide{
 		padding-bottom:40px;
+		background-color: $light-grey;
 		figure{
 			margin-bottom:0;
 			&:before{
@@ -23,6 +25,9 @@
 				display: inline-block;
 				padding-top:50%;
 			}
+		}
+		p.author{
+			margin-bottom: 20px;
 		}
 	}
 	.page-count{
@@ -158,6 +163,7 @@
 	margin-bottom:80px;
 }
 
+
 /* Large */
 @media #{$medium-up} {
 
@@ -166,6 +172,7 @@
 		//	margin: 0;
 		}
 	}
+
 }
 @media #{$large-up} { 
 	#slider{
@@ -196,6 +203,13 @@
 		}
 	}
 	.latest-articles article{
+		margin-bottom: 0;
+	}
+}
+
+@media #{$xlarge-up} { 
+
+#slider{
 		margin-bottom: 0;
 	}
 }
