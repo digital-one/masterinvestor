@@ -68,6 +68,24 @@ $('#slider').slick({
 
 }
 
+init_map = function(){
+
+if($('#map').length){
+	$('#map').html('');
+		var _lat = Map.lat,
+			_lng = Map.lng,
+			_marker = Map.marker;
+$('#map').gmap({
+        markers: [{'latitude': _lat,'longitude': _lng}],
+        markerFile: _marker,
+        markerWidth:53,
+        markerHeight:80,
+        markerAnchorX:27,
+        markerAnchorY:80
+    });
+}
+}
+
 
 if($('#twitter-slider').length){ 
 
@@ -83,6 +101,7 @@ initTwitterFeedSlick = function(){
     arrows: true
   });
 }
+
 
 
 	handleTweets = function(_tweets){
@@ -201,7 +220,9 @@ $('.anchor-up').on('click',function(e){
 })
   
  
-       
+ $(window).on('resize',function(){
+ 	init_map();
+ })      
 
 
 
@@ -215,5 +236,6 @@ $(window).on( 'DOMMouseScroll mousewheel', function ( event ) {
   }
 });
 
+init_map();
 
 });

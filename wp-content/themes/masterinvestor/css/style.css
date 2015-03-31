@@ -2909,6 +2909,7 @@ header#header .social-nav-wrap, header#header .search-wrap, #footer section, .di
 /* line 4, ../scss/_base.scss */
 body {
   background-color: #231f20;
+  font-family: "Merriweather", serif;
 }
 
 /* line 1, ../scss/components/_header.scss */
@@ -3555,7 +3556,7 @@ textarea,
   font-family: inherit;
   font-size: 12px;
   font-size: 0.75rem;
-  height: 30px;
+  height: 50px;
   margin: 0 0 10px 0;
   padding: 10px;
   width: 100%;
@@ -3565,7 +3566,19 @@ textarea,
   transition: background-color 0.1s linear 0s;
   font-family: "Merriweather", serif;
 }
-/* line 29, ../scss/components/_forms.scss */
+/* line 23, ../scss/components/_forms.scss */
+#footer input[type="text"], #footer
+input[type="password"], #footer
+input[type="email"], #footer
+input[type="tel"], #footer
+input[type="number"], #footer
+input[type="search"], #footer
+select, #footer
+textarea, #footer
+.selectBox-dropdown {
+  height: 30px;
+}
+/* line 33, ../scss/components/_forms.scss */
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
@@ -3627,14 +3640,14 @@ textarea:-ms-input-placeholder,
   color: #939598;
 }
 
-/* line 37, ../scss/components/_forms.scss */
+/* line 41, ../scss/components/_forms.scss */
 textarea {
   padding: 10px;
   height: auto;
   resize: none;
 }
 
-/* line 42, ../scss/components/_forms.scss */
+/* line 46, ../scss/components/_forms.scss */
 button {
   background-color: #939598;
   border: none;
@@ -4492,7 +4505,12 @@ nav.social ul li a.vimeo {
   margin-bottom: 10px;
 }
 
-/* line 17, ../scss/components/_gravity-forms.scss */
+/* line 13, ../scss/components/_gravity-forms.scss */
+.gfield_label {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+/* line 18, ../scss/components/_gravity-forms.scss */
 .left_label .gfield_label {
   float: left;
   width: 20%;
@@ -4500,25 +4518,47 @@ nav.social ul li a.vimeo {
   line-height: 30px;
 }
 
-/* line 25, ../scss/components/_gravity-forms.scss */
+/* line 26, ../scss/components/_gravity-forms.scss */
 .left_label .ginput_container {
   float: left;
   width: 80%;
 }
 
-/* line 30, ../scss/components/_gravity-forms.scss */
+/* line 31, ../scss/components/_gravity-forms.scss */
+.recaptchatable #recaptcha_response_field {
+  height: 30px;
+  font-size: 12px !important;
+  border-color: #ccc !important;
+}
+
+/* line 37, ../scss/components/_gravity-forms.scss */
+.recaptchatable #recaptcha_image {
+  overflow: hidden !important;
+}
+
+/* line 40, ../scss/components/_gravity-forms.scss */
+.recaptchatable a {
+  font-size: 12px !important;
+  color: #27aae1 !important;
+}
+
+/* line 44, ../scss/components/_gravity-forms.scss */
 .gform_footer {
-  padding: 0 0 0 20%;
+  padding: 0;
   display: block;
   width: 100%;
   position: relative;
 }
-/* line 35, ../scss/components/_gravity-forms.scss */
+/* line 46, ../scss/components/_gravity-forms.scss */
+#footer .gform_footer {
+  padding-left: 20%;
+}
+/* line 52, ../scss/components/_gravity-forms.scss */
 .gform_footer input.gform_button {
   background-color: #27aae1;
   border: none;
-  height: 40px;
-  line-height: 40px;
+  height: 50px;
+  line-height: 54px;
   text-align: center;
   color: white;
   font-family: "Merriweather", serif;
@@ -4527,8 +4567,13 @@ nav.social ul li a.vimeo {
   text-transform: uppercase;
   padding: 0 20px;
 }
+/* line 57, ../scss/components/_gravity-forms.scss */
+#footer .gform_footer input.gform_button {
+  height: 40px;
+  line-height: 44px;
+}
 
-/* line 48, ../scss/components/_gravity-forms.scss */
+/* line 69, ../scss/components/_gravity-forms.scss */
 .gfield_description {
   display: block;
   width: 100%;
@@ -4536,7 +4581,7 @@ nav.social ul li a.vimeo {
   text-transform: none;
 }
 
-/* line 54, ../scss/components/_gravity-forms.scss */
+/* line 75, ../scss/components/_gravity-forms.scss */
 .validation_error, .validation_message {
   font-size: 12px;
   font-size: 0.75rem;
@@ -4544,7 +4589,7 @@ nav.social ul li a.vimeo {
   margin-bottom: 10px;
 }
 
-/* line 61, ../scss/components/_gravity-forms.scss */
+/* line 82, ../scss/components/_gravity-forms.scss */
 .gform_ajax_spinner {
   top: 0;
   right: 0;
@@ -5274,5 +5319,101 @@ header h4:before {
   /* line 38, ../scss/templates/_single.scss */
   .single article.post {
     padding-right: 40px;
+  }
+}
+/* line 2, ../scss/templates/_contact.scss */
+.page-template-template-contact #main {
+  padding-bottom: 0;
+}
+/* line 5, ../scss/templates/_contact.scss */
+.page-template-template-contact h1, .page-template-template-contact h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+/* line 8, ../scss/templates/_contact.scss */
+.page-template-template-contact .gform_wrapper {
+  margin-bottom: 54px;
+}
+/* line 10, ../scss/templates/_contact.scss */
+.page-template-template-contact .gform_wrapper li {
+  width: 100%;
+  clear: both;
+}
+/* line 16, ../scss/templates/_contact.scss */
+.page-template-template-contact aside .contacts {
+  padding-bottom: 40px;
+}
+/* line 18, ../scss/templates/_contact.scss */
+.page-template-template-contact aside .contacts p {
+  padding: 4px 0 0 40px;
+  position: relative;
+}
+/* line 21, ../scss/templates/_contact.scss */
+.page-template-template-contact aside .contacts p:before {
+  content: "";
+  width: 26px;
+  height: 28px;
+  display: block;
+  top: 0;
+  right: auto;
+  bottom: auto;
+  left: 0;
+  position: absolute;
+  background-image: url("../images/pin.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 17px auto;
+}
+/* line 31, ../scss/templates/_contact.scss */
+.svg .page-template-template-contact aside .contacts p:before {
+  background-image: url("../images/pin.svg");
+}
+/* line 36, ../scss/templates/_contact.scss */
+.page-template-template-contact aside .contacts p.email:before {
+  background-image: url("../images/email.png");
+  background-size: 22px auto;
+}
+/* line 39, ../scss/templates/_contact.scss */
+.svg .page-template-template-contact aside .contacts p.email:before {
+  background-image: url("../images/email.svg");
+}
+/* line 45, ../scss/templates/_contact.scss */
+.page-template-template-contact aside .contacts p.phone:before {
+  background-image: url("../images/phone.png");
+  background-size: 19px auto;
+}
+/* line 48, ../scss/templates/_contact.scss */
+.svg .page-template-template-contact aside .contacts p.phone:before {
+  background-image: url("../images/phone.svg");
+}
+/* line 56, ../scss/templates/_contact.scss */
+.page-template-template-contact #map {
+  display: block;
+  width: 100%;
+  background-color: #939598;
+}
+/* line 60, ../scss/templates/_contact.scss */
+.page-template-template-contact #map:before {
+  content: "";
+  padding-top: 50%;
+  display: block;
+}
+
+@media only screen and (min-width: 48rem) {
+  /* line 73, ../scss/templates/_contact.scss */
+  .page-template-template-contact .gform_wrapper li {
+    padding-right: 30px;
+  }
+  /* line 75, ../scss/templates/_contact.scss */
+  .page-template-template-contact .gform_wrapper li.half {
+    width: 50%;
+    float: left;
+    clear: none;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  /* line 91, ../scss/templates/_contact.scss */
+  .page-template-template-contact #map:before {
+    padding-top: 30%;
   }
 }

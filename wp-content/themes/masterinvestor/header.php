@@ -23,8 +23,9 @@
 <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <?php gravity_form_enqueue_scripts(1, true); ?>
+<?php gravity_form_enqueue_scripts(2, true); ?>
+<?php gravity_form_enqueue_scripts(3, true); ?>
 <?php wp_head(); ?>
-
 </head>
 <body <?php body_class(); ?>>
 	<!-- header -->

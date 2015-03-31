@@ -11,6 +11,7 @@
 	}
 }
 .gfield_label{
+	@include font-size(14px);
 	.gfield_required{ 
 
 	}
@@ -27,16 +28,36 @@
 		width: 80%;
 	}
 }
+.recaptchatable #recaptcha_response_field{
+	height: 30px;
+	font-size:12px !important;
+	border-color: #ccc !important;
+	//@include font-size(12px);
+}
+.recaptchatable #recaptcha_image{
+	overflow: hidden !important;
+}
+.recaptchatable a{
+	font-size:12px !important;
+	color: $blue !important;
+}
 .gform_footer{
-	padding: 0 0 0 20%;
+	padding: 0;
+	#footer &{
+		padding-left:20%;
+	}
 	display: block;
 	width: 100%;
 	position: relative;
 	input.gform_button{
 		background-color: $blue;
 		border:none;
-		height: 40px;
-		line-height: 40px;
+		height: 50px;
+		line-height: 54px;
+		#footer &{
+			height: 40px;
+			line-height: 44px;
+		}
 		text-align: center;
 		color: white;
 		font-family: $merriweather;
