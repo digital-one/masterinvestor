@@ -31,7 +31,7 @@ textarea,
 	@include transition (background-color .1s linear 0s);
 	font-family:$merriweather;
 	&:focus{
-		background-color: darken(white,10);
+		background-color: $light-grey;
 		outline:none;
 	}
 	@include placeholder {

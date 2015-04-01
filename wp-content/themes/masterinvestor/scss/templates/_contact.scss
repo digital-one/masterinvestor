@@ -12,47 +12,6 @@
 			clear: both;
 		}
 	}
-	aside{
-		.contacts{
-			padding-bottom: 40px;
-			p{
-				padding: 4px 0 0 40px;
-				position: relative;
-				&:before{
-					content:"";
-					width:26px;
-					height:28px;
-					display: block;
-					@include abs-pos(0,auto,auto,0);
-					background-image:url('../images/pin.png');
-					background-position: center center;
-					background-repeat: no-repeat;
-					background-size: 17px auto;
-					.svg &{
-						background-image:url('../images/pin.svg');
-					}
-				}
-				&.email{
-					&:before{
-						background-image:url('../images/email.png');
-						background-size: 22px auto;
-						.svg &{
-							background-image:url('../images/email.svg');
-						}
-					}
-				}
-				&.phone{
-					&:before{
-						background-image:url('../images/phone.png');
-						background-size: 19px auto;
-						.svg &{
-							background-image:url('../images/phone.svg');
-						}
-					}
-				}
-			}
-		}
-	}
 	#map{
 		display: block;
 		width:100%;
@@ -76,6 +35,13 @@
 					width:50%;
 					float:left;
 					clear:none;
+				}
+			}
+		}
+		aside{
+			.gform_wrapper{
+				li{
+					padding-right:0;
 				}
 			}
 		}

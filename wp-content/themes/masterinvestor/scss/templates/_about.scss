@@ -1,0 +1,70 @@
+.page-template, .page{
+	h1,h2{
+		@include font-size(28px);
+	}
+	.about{
+		padding-bottom: 40px;
+	}
+	.inner-wrap{
+		padding:0 $half-spacing 0 0;
+	}
+	.contributors{
+		article{
+			padding-bottom:  40px;
+			figure{
+				@include border-radius(50%);
+				overflow:hidden;
+			}
+			h3{
+				color: $blue;
+				@include font-size(20px);
+				margin-bottom: 20px;
+			}
+			p{
+				@include font-size(12px);
+				margin-bottom: 10px;
+			}
+		}
+	}
+	aside{
+		.contacts{
+			padding-bottom: 40px;
+			p{
+				padding: 4px 0 0 40px;
+				position: relative;
+				&:before{
+					content:"";
+					width:26px;
+					height:28px;
+					display: block;
+					@include abs-pos(0,auto,auto,0);
+					background-image:url('../images/pin.png');
+					background-position: center center;
+					background-repeat: no-repeat;
+					background-size: 17px auto;
+					.svg &{
+						background-image:url('../images/pin.svg');
+					}
+				}
+				&.email{
+					&:before{
+						background-image:url('../images/email.png');
+						background-size: 22px auto;
+						.svg &{
+							background-image:url('../images/email.svg');
+						}
+					}
+				}
+				&.phone{
+					&:before{
+						background-image:url('../images/phone.png');
+						background-size: 19px auto;
+						.svg &{
+							background-image:url('../images/phone.svg');
+						}
+					}
+				}
+			}
+		}
+	}
+}

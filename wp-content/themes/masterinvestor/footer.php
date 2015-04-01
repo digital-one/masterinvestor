@@ -57,8 +57,8 @@
 </section>
 <section id="legal">
 <h4>Legal</h4>
-<ul><li><a href="">Terms and Conditions</a></li>
-<li><a href="">Privacy Policy</a></li></ul>
+<ul><li><a href="<?php echo get_permalink(115) ?>">Terms and Conditions</a></li>
+<li><a href="<?php echo get_permalink(117) ?>">Privacy Policy</a></li></ul>
 <p>&copy; 2015 MASTER INVESTOR.<br />
  All rights reserved.</p>
 </section>

@@ -106,3 +106,50 @@ function register_menus() {
 add_action( 'init', 'register_menus' );
 
 
+
+
+add_action( 'show_user_profile', 'show_custom_user_meta_fields', 0 );
+		add_action( 'edit_user_profile', 'show_custom_user_meta_fields',0 );
+		add_action( 'personal_options_update', 'save_custom_user_meta_fields',0);
+		add_action( 'edit_user_profile_update', 'save_custom_user_meta_fields',0 );
+
+
+
+function save_custom_user_meta_fields($user_id){
+
+		   if ( !current_user_can( 'edit_user', $user_id ) )
+          return false;
+
+      		  update_user_meta( $user_id, 'cm_user_profile', $_POST['cm_user_profile'] );
+      		  update_user_meta( $user_id, 'cm_user_job_title', $_POST['cm_user_job_title'] );
+      		  update_user_meta( $user_id, 'cm_user_index', $_POST['cm_user_index'] );
+	}
+
+	function show_custom_user_meta_fields($user){
+	$user_profile = get_the_author_meta( 'cm_user_profile', $user->ID);
+	$user_job_title = get_the_author_meta( 'cm_user_job_title', $user->ID);
+	$user_index = get_the_author_meta( 'cm_user_index', $user->ID) > -1 ? get_the_author_meta( 'cm_user_index', $user->ID) : 0;
+		?>
+		<h3>Profile</h3>
+		<table class="form-table">
+		<tbody>
+		<tr class="user-description-wrap">
+	<th><label for="description">Profile</label></th>
+	<td>
+		<textarea rows="10" cols="30" id="cm_user_profile" name="cm_user_profile"><?php echo $user_profile ?></textarea>
+
+		</td>
+</tr>
+	<tr class="user-description-wrap">
+	<th><label for="description">Job Title</label></th>
+	<td>
+		<input type="text" name="cm_user_job_title" id="cm_user_job_title" value="<?php echo $user_job_title ?>" class="regular-text">
+</tr>
+<tr class="user-description-wrap">
+	<th><label for="description">Index Position</label></th>
+	<td>
+		<input type="text" name="cm_user_index" id="cm_user_index" value="<?php echo $user_index ?>" class="regular-text">
+</tr>
+</tbody></table>
+<?php
+	}

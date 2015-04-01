@@ -3588,7 +3588,7 @@ input[type="search"]:focus,
 select:focus,
 textarea:focus,
 .selectBox-dropdown:focus {
-  background-color: #e6e6e6;
+  background-color: #f1f1f2;
   outline: none;
 }
 /* line 4, ../scss/bourbon/css3/_placeholder.scss */
@@ -3666,7 +3666,7 @@ h1, h2, h3, h4, h5 {
   font-size: 2.5rem;
   color: #231f20;
   font-weight: 700;
-  line-height: 100%;
+  line-height: 120%;
   margin: 0 0 30px;
   text-transform: capitalize;
 }
@@ -4585,11 +4585,15 @@ nav.social ul li a.vimeo {
 .validation_error, .validation_message {
   font-size: 12px;
   font-size: 0.75rem;
-  color: #27aae1;
+  color: white;
+  background-color: #939598;
+  padding: 4px 8px 2px;
+  display: inline-block;
   margin-bottom: 10px;
+  width: auto;
 }
 
-/* line 82, ../scss/components/_gravity-forms.scss */
+/* line 86, ../scss/components/_gravity-forms.scss */
 .gform_ajax_spinner {
   top: 0;
   right: 0;
@@ -5059,8 +5063,8 @@ nav.social ul li a.vimeo {
 
   /* line 203, ../scss/templates/_home.scss */
   #latest-edition h3 {
-    font-size: 90px;
-    font-size: 5.625rem;
+    font-size: 80px;
+    font-size: 5rem;
     line-height: 80%;
   }
   /* line 207, ../scss/templates/_home.scss */
@@ -5339,17 +5343,92 @@ header h4:before {
   width: 100%;
   clear: both;
 }
-/* line 16, ../scss/templates/_contact.scss */
-.page-template-template-contact aside .contacts {
+/* line 15, ../scss/templates/_contact.scss */
+.page-template-template-contact #map {
+  display: block;
+  width: 100%;
+  background-color: #939598;
+}
+/* line 19, ../scss/templates/_contact.scss */
+.page-template-template-contact #map:before {
+  content: "";
+  padding-top: 50%;
+  display: block;
+}
+
+@media only screen and (min-width: 48rem) {
+  /* line 32, ../scss/templates/_contact.scss */
+  .page-template-template-contact .gform_wrapper li {
+    padding-right: 30px;
+  }
+  /* line 34, ../scss/templates/_contact.scss */
+  .page-template-template-contact .gform_wrapper li.half {
+    width: 50%;
+    float: left;
+    clear: none;
+  }
+  /* line 43, ../scss/templates/_contact.scss */
+  .page-template-template-contact aside .gform_wrapper li {
+    padding-right: 0;
+  }
+}
+@media only screen and (min-width: 64rem) {
+  /* line 57, ../scss/templates/_contact.scss */
+  .page-template-template-contact #map:before {
+    padding-top: 30%;
+  }
+}
+/* line 2, ../scss/templates/_about.scss */
+.page-template h1, .page-template h2, .page h1, .page h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+/* line 5, ../scss/templates/_about.scss */
+.page-template .about, .page .about {
   padding-bottom: 40px;
 }
-/* line 18, ../scss/templates/_contact.scss */
-.page-template-template-contact aside .contacts p {
+/* line 8, ../scss/templates/_about.scss */
+.page-template .inner-wrap, .page .inner-wrap {
+  padding: 0 36px 0 0;
+}
+/* line 12, ../scss/templates/_about.scss */
+.page-template .contributors article, .page .contributors article {
+  padding-bottom: 40px;
+}
+/* line 14, ../scss/templates/_about.scss */
+.page-template .contributors article figure, .page .contributors article figure {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  overflow: hidden;
+}
+/* line 18, ../scss/templates/_about.scss */
+.page-template .contributors article h3, .page .contributors article h3 {
+  color: #27aae1;
+  font-size: 20px;
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+/* line 23, ../scss/templates/_about.scss */
+.page-template .contributors article p, .page .contributors article p {
+  font-size: 12px;
+  font-size: 0.75rem;
+  margin-bottom: 10px;
+}
+/* line 30, ../scss/templates/_about.scss */
+.page-template aside .contacts, .page aside .contacts {
+  padding-bottom: 40px;
+}
+/* line 32, ../scss/templates/_about.scss */
+.page-template aside .contacts p, .page aside .contacts p {
   padding: 4px 0 0 40px;
   position: relative;
 }
-/* line 21, ../scss/templates/_contact.scss */
-.page-template-template-contact aside .contacts p:before {
+/* line 35, ../scss/templates/_about.scss */
+.page-template aside .contacts p:before, .page aside .contacts p:before {
   content: "";
   width: 26px;
   height: 28px;
@@ -5364,56 +5443,25 @@ header h4:before {
   background-repeat: no-repeat;
   background-size: 17px auto;
 }
-/* line 31, ../scss/templates/_contact.scss */
-.svg .page-template-template-contact aside .contacts p:before {
+/* line 45, ../scss/templates/_about.scss */
+.svg .page-template aside .contacts p:before, .svg .page aside .contacts p:before {
   background-image: url("../images/pin.svg");
 }
-/* line 36, ../scss/templates/_contact.scss */
-.page-template-template-contact aside .contacts p.email:before {
+/* line 50, ../scss/templates/_about.scss */
+.page-template aside .contacts p.email:before, .page aside .contacts p.email:before {
   background-image: url("../images/email.png");
   background-size: 22px auto;
 }
-/* line 39, ../scss/templates/_contact.scss */
-.svg .page-template-template-contact aside .contacts p.email:before {
+/* line 53, ../scss/templates/_about.scss */
+.svg .page-template aside .contacts p.email:before, .svg .page aside .contacts p.email:before {
   background-image: url("../images/email.svg");
 }
-/* line 45, ../scss/templates/_contact.scss */
-.page-template-template-contact aside .contacts p.phone:before {
+/* line 59, ../scss/templates/_about.scss */
+.page-template aside .contacts p.phone:before, .page aside .contacts p.phone:before {
   background-image: url("../images/phone.png");
   background-size: 19px auto;
 }
-/* line 48, ../scss/templates/_contact.scss */
-.svg .page-template-template-contact aside .contacts p.phone:before {
+/* line 62, ../scss/templates/_about.scss */
+.svg .page-template aside .contacts p.phone:before, .svg .page aside .contacts p.phone:before {
   background-image: url("../images/phone.svg");
-}
-/* line 56, ../scss/templates/_contact.scss */
-.page-template-template-contact #map {
-  display: block;
-  width: 100%;
-  background-color: #939598;
-}
-/* line 60, ../scss/templates/_contact.scss */
-.page-template-template-contact #map:before {
-  content: "";
-  padding-top: 50%;
-  display: block;
-}
-
-@media only screen and (min-width: 48rem) {
-  /* line 73, ../scss/templates/_contact.scss */
-  .page-template-template-contact .gform_wrapper li {
-    padding-right: 30px;
-  }
-  /* line 75, ../scss/templates/_contact.scss */
-  .page-template-template-contact .gform_wrapper li.half {
-    width: 50%;
-    float: left;
-    clear: none;
-  }
-}
-@media only screen and (min-width: 64rem) {
-  /* line 91, ../scss/templates/_contact.scss */
-  .page-template-template-contact #map:before {
-    padding-top: 30%;
-  }
 }
